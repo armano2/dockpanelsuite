@@ -84,19 +84,19 @@
     <Compile Include="Docking\ThemeBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\VS2003AutoHideStrip.cs">
+    <Compile Include="Docking\Themes\VS2003AutoHideStrip.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\VS2003DockPaneCaption.cs">
+    <Compile Include="Docking\Themes\VS2003DockPaneCaption.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\VS2003DockPaneStrip.cs">
+    <Compile Include="Docking\Themes\VS2003DockPaneStrip.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\VS2003Theme.cs">
+    <Compile Include="Docking\Themes\VS2003Theme.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\VS2005AutoHideStrip.cs">
+    <Compile Include="Docking\Themes\VS2005AutoHideStrip.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Docking\DockPanel.AutoHideWindow.cs">
@@ -121,13 +121,11 @@
     <Compile Include="Docking\DockPaneCaptionBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\VS2005DockPaneCaption.cs">
+    <Compile Include="Docking\Themes\VS2005DockPaneCaption.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Docking\DockPaneCollection.cs" />
-    <Compile Include="Docking\DockPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Docking\DockPanel.cs" />
     <Compile Include="Docking\DockPanelExtender.cs" />
     <Compile Include="Docking\DockPanel.Persistor.cs">
       <SubType>Component</SubType>
@@ -138,7 +136,7 @@
     <Compile Include="Docking\DockPaneStripBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\VS2005DockPaneStrip.cs">
+    <Compile Include="Docking\Themes\VS2005DockPaneStrip.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Docking\DockWindow.cs">
@@ -170,28 +168,28 @@
     <Compile Include="Docking\Localization.cs" />
     <Compile Include="Docking\Helpers\ResourceHelper.cs" />
     <Compile Include="Docking\Helpers\Win32Helper.cs" />
-    <Compile Include="Docking\VS2005Theme.cs">
+    <Compile Include="Docking\Themes\VS2005Theme.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\VS2012LightAutoHideStrip.cs">
+    <Compile Include="Docking\Themes\VS2012LightAutoHideStrip.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\VS2012LightAutoHideWindowControl.cs">
+    <Compile Include="Docking\Themes\VS2012LightAutoHideWindowControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\VS2012LightDockPaneCaption.cs">
+    <Compile Include="Docking\Themes\VS2012LightDockPaneCaption.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\VS2012LightDockPaneStrip.cs">
+    <Compile Include="Docking\Themes\VS2012LightDockPaneStrip.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\VS2012LightDockWindow.cs">
+    <Compile Include="Docking\Themes\VS2012LightDockWindow.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\VS2012LightSplitterControl.cs">
+    <Compile Include="Docking\Themes\VS2012LightSplitterControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\VS2012LightTheme.cs">
+    <Compile Include="Docking\Themes\VS2012LightTheme.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -273,18 +271,21 @@
     <None Include="Docking\ResourcesVS2003\DockPaneStrip_ScrollRightEnabled.png" />
     <None Include="Docking\Resources\ActiveTabHover_Close.png" />
     <None Include="Docking\Resources\ActiveTab_Close.png" />
-    <None Include="Docking\Resources\Dockindicator_PaneDiamond_Fill_VS2012.png" />
-    <None Include="Docking\Resources\DockIndicator_PaneDiamond_HotspotIndex_VS2012.png" />
-    <None Include="Docking\Resources\Dockindicator_PaneDiamond_Hotspot_VS2012.png" />
-    <None Include="Docking\Resources\Dockindicator_PaneDiamond_VS2012.png" />
-    <None Include="Docking\Resources\DockIndicator_PanelBottom_VS2012.png" />
+    <None Include="Docking\ResourcesVS2012Light\Dockindicator_PaneDiamond_Fill_VS2012.png" />
+    <None Include="Docking\ResourcesVS2012Light\DockIndicator_PaneDiamond_HotspotIndex_VS2012.png" />
+    <None Include="Docking\ResourcesVS2012Light\Dockindicator_PaneDiamond_Hotspot_VS2012.png" />
+    <None Include="Docking\ResourcesVS2012Light\Dockindicator_PaneDiamond_VS2012.png" />
+    <None Include="Docking\ResourcesVS2012Light\DockIndicator_PanelBottom_VS2012.png" />
     <None Include="Docking\Resources\DockIndicator_PanelFill_VS2012.png" />
-    <None Include="Docking\Resources\DockIndicator_PanelLeft_VS2012.png" />
-    <None Include="Docking\Resources\DockIndicator_PanelRight_VS2012.png" />
-    <None Include="Docking\Resources\DockIndicator_PanelTop_VS2012.png" />
+    <None Include="Docking\ResourcesVS2012Light\DockIndicator_PanelLeft_VS2012.png" />
+    <None Include="Docking\ResourcesVS2012Light\DockIndicator_PanelRight_VS2012.png" />
+    <None Include="Docking\ResourcesVS2012Light\DockIndicator_PanelTop_VS2012.png" />
     <None Include="Docking\Resources\InactiveTabHover_Close.png" />
     <None Include="Docking\Resources\LostFocusTabHover_Close.png" />
     <None Include="Docking\Resources\LostFocusTab_Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Docking\ResourcesVS2012Dark\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <UsingTask Condition=" '$(Configuration)' == 'Release' AND '$(OS)' == 'Windows_NT' AND Exists('..\gendarme\GendarmeMsBuild.dll')" AssemblyFile="..\gendarme\GendarmeMsBuild.dll" TaskName="GendarmeMsBuild.Gendarme" />
