@@ -3,13 +3,11 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace Lextm.SharpSnmpLib
+namespace WeifenLuo.WinFormsUI.Docking
 {
-    internal class VS2012ToolStripRenderer : ToolStripProfessionalRenderer
+    public class VS2012ToolStripRenderer : ToolStripProfessionalRenderer
     {
-        private static readonly VS2012ColorTable CustomColorTable = new VS2012ColorTable();
-
-        public VS2012ToolStripRenderer()
+        public VS2012ToolStripRenderer(ProfessionalColorTable CustomColorTable)
             : base(CustomColorTable)
         {
         }
@@ -22,16 +20,6 @@ namespace Lextm.SharpSnmpLib
                 ToolStripManager.RenderMode = ToolStripManagerRenderMode.Professional;
                 ToolStripManager.Renderer = old;
             }
-        }
-
-        /// <summary>
-        /// Gets the color palette used for painting.
-        /// </summary>
-        /// <value></value>
-        /// <returns>The <see cref="CustomColorTable"/> used for painting.</returns>
-        public new VS2012ColorTable ColorTable
-        {
-            get { return CustomColorTable; }
         }
 
         #region Rendering Improvements (includes fixes for bugs occured when Windows Classic theme is on).

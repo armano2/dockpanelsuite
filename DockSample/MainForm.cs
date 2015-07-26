@@ -20,6 +20,7 @@ namespace DockSample
         private DummyToolbox m_toolbox;
         private DummyOutputWindow m_outputWindow;
         private DummyTaskList m_taskList;
+        private VS2012ToolStripExtender toolStripExtender;
 
         public MainForm()
         {
@@ -31,9 +32,8 @@ namespace DockSample
             RightToLeftLayout = showRightToLeft.Checked;
             m_solutionExplorer.RightToLeftLayout = RightToLeftLayout;
             m_deserializeDockContent = new DeserializeDockContent(GetContentFromPersistString);
-            
-            vS2012ToolStripExtender1.DefaultRenderer = _system;
-            vS2012ToolStripExtender1.VS2012Renderer = _custom;
+            toolStripExtender = new VS2012ToolStripExtender();
+            updateTheme(vS2012LightTheme1);
         }
 
         #region Methods
@@ -63,13 +63,11 @@ namespace DockSample
             DummyDoc dummyDoc = new DummyDoc();
 
             int count = 1;
-            //string text = "C:\\MADFDKAJ\\ADAKFJASD\\ADFKDSAKFJASD\\ASDFKASDFJASDF\\ASDFIJADSFJ\\ASDFKDFDA" + count.ToString();
-            string text = "Document" + count.ToString();
+            string text = "Document " + count.ToString();
             while (FindDocument(text) != null)
             {
-                count++;
-                //text = "C:\\MADFDKAJ\\ADAKFJASD\\ADFKDSAKFJASD\\ASDFKASDFJASDF\\ASDFIJADSFJ\\ASDFKDFDA" + count.ToString();
-                text = "Document" + count.ToString();
+                ++count;
+                text = "Document " + count.ToString();
             }
             dummyDoc.Text = text;
             return dummyDoc;
@@ -145,38 +143,28 @@ namespace DockSample
             CloseAllDocuments();
         }
 
-        private readonly ToolStripRenderer _system = new ToolStripProfessionalRenderer();
-        private readonly ToolStripRenderer _custom = new VS2012ToolStripRenderer();
-        
         private void SetSchema(object sender, System.EventArgs e)
         {
-            CloseAllContents();
-
-            if (sender == menuItemSchemaVS2005)
+            if (sender == menuItemSchemaVS2012Light)
             {
-                dockPanel.Theme = vS2005Theme1;
-                EnableVS2012Renderer(false);
+                updateTheme(vS2012LightTheme1);
             }
-            else if (sender == menuItemSchemaVS2003)
+            else if (sender == menuItemSchemaVS2012Dark)
             {
-                dockPanel.Theme = vS2003Theme1;
-                EnableVS2012Renderer(false);
+                updateTheme(vS2012DarkTheme1);
             }
-            else if (sender == menuItemSchemaVS2012Light)
-            {
-                dockPanel.Theme = vS2012LightTheme1;
-                EnableVS2012Renderer(true);
-            }
-
-            menuItemSchemaVS2005.Checked = (sender == menuItemSchemaVS2005);
-            menuItemSchemaVS2003.Checked = (sender == menuItemSchemaVS2003);
-            menuItemSchemaVS2012Light.Checked = (sender == menuItemSchemaVS2012Light);
         }
 
-        private void EnableVS2012Renderer(bool enable)
+        private void updateTheme(ThemeBase theme)
         {
-            vS2012ToolStripExtender1.SetEnableVS2012Style(this.mainMenu, enable);
-            vS2012ToolStripExtender1.SetEnableVS2012Style(this.toolBar, enable);
+            CloseAllContents(); // TODO: we have to remove this...
+
+            toolStripExtender.SetVS2012Style(this.mainMenu, theme.Renderer);
+            toolStripExtender.SetVS2012Style(this.toolBar, theme.Renderer);
+
+            this.dockPanel.Theme = theme;
+            this.menuItemSchemaVS2012Light.Checked = (theme is VS2012LightTheme);
+            this.menuItemSchemaVS2012Dark.Checked = (theme is VS2012DarkTheme);
         }
 
         private void SetDocumentStyle(object sender, System.EventArgs e)
@@ -209,9 +197,6 @@ namespace DockSample
             toolBarButtonLayoutByXml.Enabled = (newStyle != DocumentStyle.SystemMdi);
         }
 
-        private AutoHideStripSkin _autoHideStripSkin;
-        private DockPaneStripSkin _dockPaneStripSkin;
-
         private void SetDockPanelSkinOptions(bool isChecked)
         {
             if (isChecked)
@@ -228,9 +213,6 @@ namespace DockSample
                 autoHideSkin.TabGradient.TextColor = SystemColors.ControlText;
                 autoHideSkin.TextFont = new Font("Showcard Gothic", 10);
 
-                _autoHideStripSkin = dockPanel.Skin.AutoHideStripSkin;
-                dockPanel.Skin.AutoHideStripSkin = autoHideSkin;
-
                 DockPaneStripSkin dockPaneSkin = new DockPaneStripSkin();
                 dockPaneSkin.DocumentGradient.DockStripGradient.StartColor = Color.Red;
                 dockPaneSkin.DocumentGradient.DockStripGradient.EndColor = Color.Pink;
@@ -244,21 +226,6 @@ namespace DockSample
                 dockPaneSkin.DocumentGradient.InactiveTabGradient.TextColor = Color.Black;
 
                 dockPaneSkin.TextFont = new Font("SketchFlow Print", 10);
-
-                _dockPaneStripSkin = dockPanel.Skin.DockPaneStripSkin;
-                dockPanel.Skin.DockPaneStripSkin = dockPaneSkin;
-            }
-            else
-            {
-                if (_autoHideStripSkin != null)
-                {
-                    dockPanel.Skin.AutoHideStripSkin = _autoHideStripSkin;
-                }
-
-                if (_dockPaneStripSkin != null)
-                {
-                    dockPanel.Skin.DockPaneStripSkin = _dockPaneStripSkin;
-                }
             }
 
             menuItemLayoutByXml_Click(menuItemLayoutByXml, EventArgs.Empty);

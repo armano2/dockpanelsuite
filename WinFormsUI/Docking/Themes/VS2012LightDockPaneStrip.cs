@@ -273,7 +273,7 @@ namespace WeifenLuo.WinFormsUI.Docking
 
         private static GraphicsPath GraphicsPath
         {
-            get { return VS2005AutoHideStrip.GraphicsPath; }
+            get { return VS2012LightAutoHideStrip.GraphicsPath; }
         }
 
         private IContainer Components

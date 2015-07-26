@@ -169,7 +169,7 @@ namespace WeifenLuo.WinFormsUI.Docking
         {
             public DockPaneCaptionBase CreateDockPaneCaption(DockPane pane)
             {
-                return new VS2005DockPaneCaption(pane);
+                return new VS2012LightDockPaneCaption(pane);
             }
         }
 
@@ -181,7 +181,7 @@ namespace WeifenLuo.WinFormsUI.Docking
         {
             public DockPaneStripBase CreateDockPaneStrip(DockPane pane)
             {
-                return new VS2005DockPaneStrip(pane);
+                return new VS2012LightDockPaneStrip(pane);
             }
         }
 
@@ -193,7 +193,7 @@ namespace WeifenLuo.WinFormsUI.Docking
         {
             public AutoHideStripBase CreateAutoHideStrip(DockPanel panel)
             {
-                return new VS2005AutoHideStrip(panel);
+                return new VS2012LightAutoHideStrip(panel);
             }
         }
 

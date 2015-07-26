@@ -3,35 +3,25 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using System.Collections.Generic;
 
-namespace DockSample
+namespace WeifenLuo.WinFormsUI.Docking
 {
     [ProvideProperty("EnableVS2012Style", typeof(ToolStrip))]
     public partial class VS2012ToolStripExtender : Component, IExtenderProvider
     {
         private class ToolStripProperties
         {
-            private bool enabled = false;
             private readonly ToolStrip strip;
             private readonly Dictionary<ToolStripItem, string> menuText = new Dictionary<ToolStripItem, string>();
             
 
             public ToolStripProperties(ToolStrip toolstrip)
             {
-                if (toolstrip == null) throw new ArgumentNullException("toolstrip");
+                if (toolstrip == null)
+                    throw new ArgumentNullException("toolstrip");
                 strip = toolstrip;
 
                 if (strip is MenuStrip)
                     SaveMenuStripText();
-            }
-
-            public bool EnableVS2012Style 
-            {
-                get { return enabled; }
-                set
-                {
-                    enabled = value;
-                    UpdateMenuText(enabled);
-                }
             }
 
             private void SaveMenuStripText()
@@ -40,7 +30,7 @@ namespace DockSample
                     menuText.Add(item, item.Text);
             }
 
-            public void UpdateMenuText(bool caps)
+            public void UpdateMenuText(bool caps = true)
             {
                 foreach (ToolStripItem item in menuText.Keys)
                 {
@@ -73,42 +63,21 @@ namespace DockSample
 
         #endregion
 
-        public ToolStripRenderer DefaultRenderer { get; set; }
-
-        public ToolStripRenderer VS2012Renderer { get; set; }
-
-        [DefaultValue(false)]
-        public bool GetEnableVS2012Style(ToolStrip strip)
+        public void SetVS2012Style(ToolStrip strip, ToolStripRenderer render)
         {
-            if (strips.ContainsKey(strip))
-                return strips[strip].EnableVS2012Style;
-
-            return false;
-        }
-
-        public void SetEnableVS2012Style(ToolStrip strip, bool enable)
-        {
-            var apply = false;
             ToolStripProperties properties = null;
 
             if (!strips.ContainsKey(strip))
             {
-                properties = new ToolStripProperties(strip) { EnableVS2012Style = enable };
+                properties = new ToolStripProperties(strip);
                 strips.Add(strip, properties);
-                apply = true;
             }
             else
             {
                 properties = strips[strip];
-                apply = properties.EnableVS2012Style != enable;
             }
 
-            if (apply)
-            {
-                //ToolStripManager.Renderer = enable ? VS2012Renderer : DefaultRenderer;
-                strip.Renderer = enable ? VS2012Renderer : DefaultRenderer;
-                properties.EnableVS2012Style = enable;
-            }
+            strip.Renderer = render;
         }
     }
 }

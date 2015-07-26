@@ -4,7 +4,7 @@ namespace WeifenLuo.WinFormsUI.Docking
 {
     public partial class DockPanel
     {
-        private DockPanelSkin m_dockPanelSkin = VS2005Theme.CreateVisualStudio2005();
+        private DockPanelSkin m_dockPanelSkin = VS2012LightTheme.CreateVisualStudio2012Light();
         [LocalizedCategory("Category_Docking")]
         [LocalizedDescription("DockPanel_DockPanelSkin")]
         [Obsolete("Please use Theme instead.")]
@@ -14,7 +14,7 @@ namespace WeifenLuo.WinFormsUI.Docking
             set { m_dockPanelSkin = value; }
         }
         
-        private ThemeBase m_dockPanelTheme = new VS2005Theme();
+        private ThemeBase m_dockPanelTheme = new VS2012LightTheme();
         [LocalizedCategory("Category_Docking")]
         [LocalizedDescription("DockPanel_DockPanelTheme")]
         public ThemeBase Theme

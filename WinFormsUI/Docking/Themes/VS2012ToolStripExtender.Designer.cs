@@ -1,4 +1,4 @@
-﻿namespace DockSample
+﻿namespace WeifenLuo.WinFormsUI.Docking
 {
     partial class VS2012ToolStripExtender
     {

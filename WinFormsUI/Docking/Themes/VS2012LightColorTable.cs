@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Lextm.SharpSnmpLib
 {
-    class VS2012ColorTable : ProfessionalColorTable
+    class VS2012LightColorTable : ProfessionalColorTable
     {
         public override Color ButtonSelectedHighlight
         {

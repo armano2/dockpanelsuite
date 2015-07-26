@@ -83,9 +83,9 @@ namespace WeifenLuo.WinFormsUI.Docking {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DockIndicator_PaneDiamond {
+        internal static System.Drawing.Bitmap DockIndicator_PaneDiamond_Fill_VS2012 {
             get {
-                object obj = ResourceManager.GetObject("DockIndicator_PaneDiamond", resourceCulture);
+                object obj = ResourceManager.GetObject("DockIndicator_PaneDiamond_Fill_VS2012", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,59 +93,9 @@ namespace WeifenLuo.WinFormsUI.Docking {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DockIndicator_PaneDiamond_Bottom {
+        internal static System.Drawing.Bitmap DockIndicator_PaneDiamond_Hotspot_VS2012 {
             get {
-                object obj = ResourceManager.GetObject("DockIndicator_PaneDiamond_Bottom", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DockIndicator_PaneDiamond_Fill {
-            get {
-                object obj = ResourceManager.GetObject("DockIndicator_PaneDiamond_Fill", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Dockindicator_PaneDiamond_Fill_VS2012 {
-            get {
-                object obj = ResourceManager.GetObject("Dockindicator_PaneDiamond_Fill_VS2012", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DockIndicator_PaneDiamond_HotSpot {
-            get {
-                object obj = ResourceManager.GetObject("DockIndicator_PaneDiamond_HotSpot", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Dockindicator_PaneDiamond_Hotspot_VS2012 {
-            get {
-                object obj = ResourceManager.GetObject("Dockindicator_PaneDiamond_Hotspot_VS2012", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DockIndicator_PaneDiamond_HotSpotIndex {
-            get {
-                object obj = ResourceManager.GetObject("DockIndicator_PaneDiamond_HotSpotIndex", resourceCulture);
+                object obj = ResourceManager.GetObject("DockIndicator_PaneDiamond_Hotspot_VS2012", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,59 +113,9 @@ namespace WeifenLuo.WinFormsUI.Docking {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DockIndicator_PaneDiamond_Left {
+        internal static System.Drawing.Bitmap DockIndicator_PaneDiamond_VS2012 {
             get {
-                object obj = ResourceManager.GetObject("DockIndicator_PaneDiamond_Left", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DockIndicator_PaneDiamond_Right {
-            get {
-                object obj = ResourceManager.GetObject("DockIndicator_PaneDiamond_Right", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DockIndicator_PaneDiamond_Top {
-            get {
-                object obj = ResourceManager.GetObject("DockIndicator_PaneDiamond_Top", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Dockindicator_PaneDiamond_VS2012 {
-            get {
-                object obj = ResourceManager.GetObject("Dockindicator_PaneDiamond_VS2012", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DockIndicator_PanelBottom {
-            get {
-                object obj = ResourceManager.GetObject("DockIndicator_PanelBottom", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DockIndicator_PanelBottom_Active {
-            get {
-                object obj = ResourceManager.GetObject("DockIndicator_PanelBottom_Active", resourceCulture);
+                object obj = ResourceManager.GetObject("DockIndicator_PaneDiamond_VS2012", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,49 +133,9 @@ namespace WeifenLuo.WinFormsUI.Docking {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DockIndicator_PanelFill {
-            get {
-                object obj = ResourceManager.GetObject("DockIndicator_PanelFill", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DockIndicator_PanelFill_Active {
-            get {
-                object obj = ResourceManager.GetObject("DockIndicator_PanelFill_Active", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap DockIndicator_PanelFill_VS2012 {
             get {
                 object obj = ResourceManager.GetObject("DockIndicator_PanelFill_VS2012", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DockIndicator_PanelLeft {
-            get {
-                object obj = ResourceManager.GetObject("DockIndicator_PanelLeft", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DockIndicator_PanelLeft_Active {
-            get {
-                object obj = ResourceManager.GetObject("DockIndicator_PanelLeft_Active", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,49 +153,9 @@ namespace WeifenLuo.WinFormsUI.Docking {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DockIndicator_PanelRight {
-            get {
-                object obj = ResourceManager.GetObject("DockIndicator_PanelRight", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DockIndicator_PanelRight_Active {
-            get {
-                object obj = ResourceManager.GetObject("DockIndicator_PanelRight_Active", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap DockIndicator_PanelRight_VS2012 {
             get {
                 object obj = ResourceManager.GetObject("DockIndicator_PanelRight_VS2012", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DockIndicator_PanelTop {
-            get {
-                object obj = ResourceManager.GetObject("DockIndicator_PanelTop", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DockIndicator_PanelTop_Active {
-            get {
-                object obj = ResourceManager.GetObject("DockIndicator_PanelTop_Active", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

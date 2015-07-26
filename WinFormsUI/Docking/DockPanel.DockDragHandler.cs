@@ -53,14 +53,14 @@ namespace WeifenLuo.WinFormsUI.Docking
 
         internal class DefaultPaneIndicator : PictureBox, IPaneIndicator
         {
-            private static Bitmap _bitmapPaneDiamond = Resources.DockIndicator_PaneDiamond;
-            private static Bitmap _bitmapPaneDiamondLeft = Resources.DockIndicator_PaneDiamond_Left;
-            private static Bitmap _bitmapPaneDiamondRight = Resources.DockIndicator_PaneDiamond_Right;
-            private static Bitmap _bitmapPaneDiamondTop = Resources.DockIndicator_PaneDiamond_Top;
-            private static Bitmap _bitmapPaneDiamondBottom = Resources.DockIndicator_PaneDiamond_Bottom;
-            private static Bitmap _bitmapPaneDiamondFill = Resources.DockIndicator_PaneDiamond_Fill;
-            private static Bitmap _bitmapPaneDiamondHotSpot = Resources.DockIndicator_PaneDiamond_HotSpot;
-            private static Bitmap _bitmapPaneDiamondHotSpotIndex = Resources.DockIndicator_PaneDiamond_HotSpotIndex;
+            private static Bitmap _bitmapPaneDiamond = Resources.DockIndicator_PaneDiamond_VS2012;
+            private static Bitmap _bitmapPaneDiamondLeft = Resources.DockIndicator_PanelLeft_VS2012;
+            private static Bitmap _bitmapPaneDiamondRight = Resources.DockIndicator_PanelRight_VS2012;
+            private static Bitmap _bitmapPaneDiamondTop = Resources.DockIndicator_PanelTop_VS2012;
+            private static Bitmap _bitmapPaneDiamondBottom = Resources.DockIndicator_PanelBottom_VS2012;
+            private static Bitmap _bitmapPaneDiamondFill = Resources.DockIndicator_PaneDiamond_Fill_VS2012;
+            private static Bitmap _bitmapPaneDiamondHotSpot = Resources.DockIndicator_PaneDiamond_Hotspot_VS2012;
+            private static Bitmap _bitmapPaneDiamondHotSpotIndex = Resources.DockIndicator_PaneDiamond_HotspotIndex_VS2012;
             private static HotSpotIndex[] _hotSpots = new[]
             {
                 new HotSpotIndex(1, 0, DockStyle.Top),
@@ -147,16 +147,17 @@ namespace WeifenLuo.WinFormsUI.Docking
 
         internal class DefaultPanelIndicator : PictureBox, IPanelIndicator
         {
-            private static Image _imagePanelLeft = Resources.DockIndicator_PanelLeft;
-            private static Image _imagePanelRight = Resources.DockIndicator_PanelRight;
-            private static Image _imagePanelTop = Resources.DockIndicator_PanelTop;
-            private static Image _imagePanelBottom = Resources.DockIndicator_PanelBottom;
-            private static Image _imagePanelFill = Resources.DockIndicator_PanelFill;
-            private static Image _imagePanelLeftActive = Resources.DockIndicator_PanelLeft_Active;
-            private static Image _imagePanelRightActive = Resources.DockIndicator_PanelRight_Active;
-            private static Image _imagePanelTopActive = Resources.DockIndicator_PanelTop_Active;
-            private static Image _imagePanelBottomActive = Resources.DockIndicator_PanelBottom_Active;
-            private static Image _imagePanelFillActive = Resources.DockIndicator_PanelFill_Active;
+            private static Image _imagePanelLeft = Resources.DockIndicator_PanelLeft_VS2012;
+            private static Image _imagePanelRight = Resources.DockIndicator_PanelRight_VS2012;
+            private static Image _imagePanelTop = Resources.DockIndicator_PanelTop_VS2012;
+            private static Image _imagePanelBottom = Resources.DockIndicator_PanelBottom_VS2012;
+            private static Image _imagePanelFill = Resources.DockIndicator_PanelFill_VS2012;
+
+            private static Image _imagePanelLeftActive = Resources.DockIndicator_PanelLeft_VS2012;      // TODO: active version
+            private static Image _imagePanelRightActive = Resources.DockIndicator_PanelRight_VS2012;    // TODO: active version
+            private static Image _imagePanelTopActive = Resources.DockIndicator_PanelTop_VS2012;        // TODO: active version
+            private static Image _imagePanelBottomActive = Resources.DockIndicator_PanelBottom_VS2012;  // TODO: active version
+            private static Image _imagePanelFillActive = Resources.DockIndicator_PanelFill_VS2012;      // TODO: active version
 
             public DefaultPanelIndicator(DockStyle dockStyle)
             {

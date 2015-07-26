@@ -71,10 +71,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Docking\ResourcesVS2003.Designer.cs">
+    <Compile Include="Docking\ResourcesVS2012Dark.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ResourcesVS2003.resx</DependentUpon>
+      <DependentUpon>ResourcesVS2012Dark.resx</DependentUpon>
     </Compile>
     <Compile Include="Docking\StringsVS2003.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -84,24 +84,25 @@
     <Compile Include="Docking\ThemeBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\Themes\VS2003AutoHideStrip.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Docking\Themes\VS2003DockPaneCaption.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Docking\Themes\VS2003DockPaneStrip.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Docking\Themes\VS2003Theme.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Docking\Themes\VS2005AutoHideStrip.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Docking\DockPanel.AutoHideWindow.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Docking\Themes\VS2012DarkColorTable.cs" />
+    <Compile Include="Docking\Themes\VS2012LightColorTable.cs" />
+    <Compile Include="Docking\Themes\VS2012DarkDockPaneStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Themes\VS2012DarkSplitterControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Themes\VS2012DarkTheme.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Themes\VS2012ToolStripExtender.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Themes\VS2012ToolStripExtender.Designer.cs" />
+    <Compile Include="Docking\Themes\VS2012ToolStripRenderer.cs" />
     <Compile Include="Docking\VisibleNestedPaneCollection.cs" />
     <Compile Include="Docking\DockAreasEditor.cs" />
     <Compile Include="Docking\DockContent.cs">
@@ -121,9 +122,6 @@
     <Compile Include="Docking\DockPaneCaptionBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\Themes\VS2005DockPaneCaption.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Docking\DockPaneCollection.cs" />
     <Compile Include="Docking\DockPanel.cs" />
     <Compile Include="Docking\DockPanelExtender.cs" />
@@ -134,9 +132,6 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Docking\DockPaneStripBase.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Docking\Themes\VS2005DockPaneStrip.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Docking\DockWindow.cs">
@@ -168,9 +163,6 @@
     <Compile Include="Docking\Localization.cs" />
     <Compile Include="Docking\Helpers\ResourceHelper.cs" />
     <Compile Include="Docking\Helpers\Win32Helper.cs" />
-    <Compile Include="Docking\Themes\VS2005Theme.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Docking\Themes\VS2012LightAutoHideStrip.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -207,9 +199,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Docking\ResourcesVS2003.resx">
+    <EmbeddedResource Include="Docking\ResourcesVS2012Dark.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResourcesVS2003.Designer.cs</LastGenOutput>
+      <LastGenOutput>ResourcesVS2012Dark.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Docking\Strings.resx">
       <SubType>Designer</SubType>
@@ -227,24 +219,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Docking\Resources\DockIndicator_PaneDiamond.png" />
-    <None Include="Docking\Resources\DockIndicator_PaneDiamond_Bottom.png" />
-    <None Include="Docking\Resources\Dockindicator_PaneDiamond_Fill.png" />
-    <None Include="Docking\Resources\DockIndicator_PaneDiamond_Hotspot.png" />
-    <None Include="Docking\Resources\DockIndicator_PaneDiamond_HotspotIndex.png" />
-    <None Include="Docking\Resources\DockIndicator_PaneDiamond_Left.png" />
-    <None Include="Docking\Resources\DockIndicator_PaneDiamond_Right.png" />
-    <None Include="Docking\Resources\DockIndicator_PaneDiamond_Top.png" />
-    <None Include="Docking\Resources\DockIndicator_PanelBottom.png" />
-    <None Include="Docking\Resources\DockIndicator_PanelBottom_Active.png" />
-    <None Include="Docking\Resources\DockIndicator_PanelFill.png" />
-    <None Include="Docking\Resources\DockIndicator_PanelFill_Active.png" />
-    <None Include="Docking\Resources\DockIndicator_PanelLeft.png" />
-    <None Include="Docking\Resources\DockIndicator_PanelLeft_Active.png" />
-    <None Include="Docking\Resources\DockIndicator_PanelRight.png" />
-    <None Include="Docking\Resources\DockIndicator_PanelRight_Active.png" />
-    <None Include="Docking\Resources\DockIndicator_PanelTop.png" />
-    <None Include="Docking\Resources\DockIndicator_PanelTop_Active.png" />
     <None Include="Docking\Resources\DockPane_AutoHide.png" />
     <None Include="Docking\Resources\DockPane_Close.png" />
     <None Include="Docking\Resources\DockPane_Dock.png" />
@@ -259,24 +233,14 @@
     <EmbeddedResource Include="Docking\DockPanel.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Docking\ResourcesVS2003\DockPaneCaption_AutoHideNo.png" />
-    <None Include="Docking\ResourcesVS2003\DockPaneCaption_AutoHideYes.png" />
-    <None Include="Docking\ResourcesVS2003\DockPaneCaption_CloseDisabled.png" />
-    <None Include="Docking\ResourcesVS2003\DockPaneCaption_CloseEnabled.png" />
-    <None Include="Docking\ResourcesVS2003\DockPaneStrip_CloseDisabled.png" />
-    <None Include="Docking\ResourcesVS2003\DockPaneStrip_CloseEnabled.png" />
-    <None Include="Docking\ResourcesVS2003\DockPaneStrip_ScrollLeftDisabled.png" />
-    <None Include="Docking\ResourcesVS2003\DockPaneStrip_ScrollLeftEnabled.png" />
-    <None Include="Docking\ResourcesVS2003\DockPaneStrip_ScrollRightDisabled.png" />
-    <None Include="Docking\ResourcesVS2003\DockPaneStrip_ScrollRightEnabled.png" />
     <None Include="Docking\Resources\ActiveTabHover_Close.png" />
     <None Include="Docking\Resources\ActiveTab_Close.png" />
-    <None Include="Docking\ResourcesVS2012Light\Dockindicator_PaneDiamond_Fill_VS2012.png" />
+    <None Include="Docking\ResourcesVS2012Light\DockIndicator_PaneDiamond_Fill_VS2012.png" />
     <None Include="Docking\ResourcesVS2012Light\DockIndicator_PaneDiamond_HotspotIndex_VS2012.png" />
-    <None Include="Docking\ResourcesVS2012Light\Dockindicator_PaneDiamond_Hotspot_VS2012.png" />
+    <None Include="Docking\ResourcesVS2012Light\DockIndicator_PaneDiamond_Hotspot_VS2012.png" />
     <None Include="Docking\ResourcesVS2012Light\Dockindicator_PaneDiamond_VS2012.png" />
     <None Include="Docking\ResourcesVS2012Light\DockIndicator_PanelBottom_VS2012.png" />
-    <None Include="Docking\Resources\DockIndicator_PanelFill_VS2012.png" />
+    <None Include="Docking\ResourcesVS2012Light\DockIndicator_PanelFill_VS2012.png" />
     <None Include="Docking\ResourcesVS2012Light\DockIndicator_PanelLeft_VS2012.png" />
     <None Include="Docking\ResourcesVS2012Light\DockIndicator_PanelRight_VS2012.png" />
     <None Include="Docking\ResourcesVS2012Light\DockIndicator_PanelTop_VS2012.png" />
@@ -284,8 +248,10 @@
     <None Include="Docking\Resources\LostFocusTabHover_Close.png" />
     <None Include="Docking\Resources\LostFocusTab_Close.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Docking\ResourcesVS2012Dark\" />
+    <Content Include="Docking\ResourcesVS2012Dark\LostFocusTab_DarkHover_Close.png" />
+    <Content Include="Docking\ResourcesVS2012Dark\LostFocusTab_Dark_Close.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <UsingTask Condition=" '$(Configuration)' == 'Release' AND '$(OS)' == 'Windows_NT' AND Exists('..\gendarme\GendarmeMsBuild.dll')" AssemblyFile="..\gendarme\GendarmeMsBuild.dll" TaskName="GendarmeMsBuild.Gendarme" />
