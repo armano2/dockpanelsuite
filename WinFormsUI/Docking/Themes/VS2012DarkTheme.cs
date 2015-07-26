@@ -7,10 +7,16 @@ using System.Windows.Forms;
 namespace WeifenLuo.WinFormsUI.Docking
 {
     /// <summary>
-    /// Visual Studio 2012 Light theme.
+    /// Visual Studio 2012 Dark theme.
     /// </summary>
     public class VS2012DarkTheme : ThemeBase
     {
+        public VS2012DarkTheme()
+        {
+            this.ColorTable = new Lextm.SharpSnmpLib.VS2012DarkColorTable();
+            this.Renderer = new VS2012ToolStripRenderer(this.ColorTable);
+        }
+
         /// <summary>
         /// Applies the specified theme to the dock panel.
         /// </summary>
@@ -34,8 +40,6 @@ namespace WeifenLuo.WinFormsUI.Docking
 			dockPanel.Extender.PanelIndicatorFactory = new VS2012DarkPanelIndicatorFactory();
 			dockPanel.Extender.DockOutlineFactory = new VS2012DarkDockOutlineFactory();
 			dockPanel.Skin = CreateVisualStudio2012Dark();
-
-            this.Renderer = new VS2012ToolStripRenderer(new Lextm.SharpSnmpLib.VS2012DarkColorTable());
         }
 
 		private class VS2012DarkDockOutlineFactory : DockPanelExtender.IDockOutlineFactory

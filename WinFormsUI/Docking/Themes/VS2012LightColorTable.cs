@@ -40,7 +40,7 @@ namespace Lextm.SharpSnmpLib
         }
         public override Color ButtonSelectedBorder
         { 
-            get { return Color.FromArgb(255, 239, 239, 242); }
+            get { return Color.FromArgb(145, 153, 164); }
         }
         public override Color ButtonCheckedGradientBegin
         { 
@@ -68,15 +68,15 @@ namespace Lextm.SharpSnmpLib
         }
         public override Color ButtonPressedGradientBegin
         { 
-            get { return Color.FromArgb(255, 32, 172, 232); }
+            get { return Color.FromArgb(141, 170, 253); }
         }
         public override Color ButtonPressedGradientMiddle
         { 
-            get { return Color.FromArgb(255, 32, 172, 232); }
+            get { return Color.FromArgb(98, 101, 252); }
         }
         public override Color ButtonPressedGradientEnd
         { 
-            get { return Color.FromArgb(255, 32, 172, 232); }
+            get { return Color.FromArgb(98, 101, 252); }
         }
         public override Color CheckBackground
         { 
@@ -88,7 +88,7 @@ namespace Lextm.SharpSnmpLib
         }
         public override Color CheckPressedBackground
         { 
-            get { return Color.FromArgb(255, 32, 172, 232); }
+            get { return Color.FromArgb(98, 101, 252); }
         }
         public override Color GripDark
         { 
@@ -140,15 +140,15 @@ namespace Lextm.SharpSnmpLib
         }
         public override Color MenuBorder
         { 
-            get { return Color.FromArgb(255, 204, 206, 219); }
+            get { return Color.FromArgb(255, 0, 0, 0); }
         }
         public override Color MenuItemSelectedGradientBegin
         { 
-            get { return Color.FromArgb(255, 254, 254, 254); }
+            get { return Color.FromArgb(231, 239, 243); }
         }
         public override Color MenuItemSelectedGradientEnd
         { 
-            get { return Color.FromArgb(255, 254, 254, 254); }
+            get { return MenuItemSelectedGradientBegin; }
         }
         public override Color MenuItemPressedGradientBegin
         { 

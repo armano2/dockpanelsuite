@@ -158,11 +158,8 @@ namespace DockSample
         private void updateTheme(ThemeBase theme)
         {
             CloseAllContents(); // TODO: we have to remove this...
+            toolStripExtender.SetVS2012Style(this, theme);
 
-            toolStripExtender.SetVS2012Style(this.mainMenu, theme.Renderer);
-            toolStripExtender.SetVS2012Style(this.toolBar, theme.Renderer);
-
-            this.dockPanel.Theme = theme;
             this.menuItemSchemaVS2012Light.Checked = (theme is VS2012LightTheme);
             this.menuItemSchemaVS2012Dark.Checked = (theme is VS2012DarkTheme);
         }

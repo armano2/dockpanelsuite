@@ -8,40 +8,6 @@ namespace WeifenLuo.WinFormsUI.Docking
     [ProvideProperty("EnableVS2012Style", typeof(ToolStrip))]
     public partial class VS2012ToolStripExtender : Component, IExtenderProvider
     {
-        private class ToolStripProperties
-        {
-            private readonly ToolStrip strip;
-            private readonly Dictionary<ToolStripItem, string> menuText = new Dictionary<ToolStripItem, string>();
-            
-
-            public ToolStripProperties(ToolStrip toolstrip)
-            {
-                if (toolstrip == null)
-                    throw new ArgumentNullException("toolstrip");
-                strip = toolstrip;
-
-                if (strip is MenuStrip)
-                    SaveMenuStripText();
-            }
-
-            private void SaveMenuStripText()
-            {
-                foreach (ToolStripItem item in strip.Items)
-                    menuText.Add(item, item.Text);
-            }
-
-            public void UpdateMenuText(bool caps = true)
-            {
-                foreach (ToolStripItem item in menuText.Keys)
-                {
-                    var text = menuText[item];
-                    item.Text = caps ? text.ToUpper() : text;
-                }
-            }
-        }
-
-        private readonly Dictionary<ToolStrip, ToolStripProperties> strips = new Dictionary<ToolStrip, ToolStripProperties>();
-
         public VS2012ToolStripExtender()
         {
             InitializeComponent();
@@ -63,21 +29,60 @@ namespace WeifenLuo.WinFormsUI.Docking
 
         #endregion
 
-        public void SetVS2012Style(ToolStrip strip, ToolStripRenderer render)
+        public void SetVS2012Style(Control c, ThemeBase theme)
         {
-            ToolStripProperties properties = null;
-
-            if (!strips.ContainsKey(strip))
+            if (c is DockPanel)
             {
-                properties = new ToolStripProperties(strip);
-                strips.Add(strip, properties);
+                var p = c as DockPanel;
+                p.Theme = theme;
+                return; // prevent recursive in this case
             }
-            else
+            else if (c is ToolStrip)
             {
-                properties = strips[strip];
+                var p = c as ToolStrip;
+                p.RenderMode = ToolStripRenderMode.Professional;
+                p.Renderer = theme.Renderer;
+                //p.ForeColor = theme.ColorTable.SeparatorDark;
+            }
+            else if (c is Panel && !(c is SplitterPanel) && !(c is ToolStripContentPanel) && !(c is FlowLayoutPanel)) // Anything that derives from Panel.
+            {
+                if (c.BackgroundImage == null)
+                    c.BackColor = theme.ColorTable.MenuItemPressedGradientBegin;
+            }
+            else if (c is PropertyGrid) // A PropertyGrid.
+            {
+                var p = c as PropertyGrid;
+                /*p.BackColor = this.PropertyGridThemeColors.PropertyGridBackColor;
+                p.CategorySplitterColor = this.PropertyGridThemeColors.PropertyGridCategorySplitterColor;
+                p.HelpBackColor = this.PropertyGridThemeColors.PropertyGridHelpBackColor;
+                p.LineColor = this.PropertyGridThemeColors.PropertyGridLineColor;
+                p.SelectedItemWithFocusBackColor = this.PropertyGridThemeColors.PropertyGridSelectedItemWithFocusBackColor;
+                p.ViewBackColor = this.PropertyGridThemeColors.PropertyGridViewBackColor;
+                p.ViewBorderColor = this.PropertyGridThemeColors.PropertyGridViewBorderColor;
+                p.HelpBorderColor = this.PropertyGridThemeColors.PropertyGridHelpBorderColor;*/
+            }
+            else if (c is TreeView)
+            {
+                // TODO...
+            }
+            else if (c is ListView)
+            {
+                // TODO...
             }
 
-            strip.Renderer = render;
+            if (c.HasChildren)  // Recurse into containers.
+                FindAndRecolorControls(c, theme);
+        }
+
+        /// <summary>
+        /// Search recursively for themeable controls and apply the theme colours to any found.
+        /// </summary>
+        public virtual void FindAndRecolorControls(Control control, ThemeBase theme)
+        {
+            for (int i = control.Controls.Count - 1; i >= 0; i--)
+            {
+                SetVS2012Style(control.Controls[i], theme);
+            }
         }
     }
 }

@@ -12,16 +12,6 @@ namespace WeifenLuo.WinFormsUI.Docking
         {
         }
 
-        public void RefreshToolStrips()
-        {
-            ToolStripRenderer old = ToolStripManager.Renderer;
-            if (old != null && ToolStripManager.RenderMode == ToolStripManagerRenderMode.Custom)
-            {
-                ToolStripManager.RenderMode = ToolStripManagerRenderMode.Professional;
-                ToolStripManager.Renderer = old;
-            }
-        }
-
         #region Rendering Improvements (includes fixes for bugs occured when Windows Classic theme is on).
         //*
         protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
