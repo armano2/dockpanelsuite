@@ -90,7 +90,6 @@
     <Compile Include="Docking\Docks\DockPanel.AutoHideWindow.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\Colors\VS2012DarkColorTable.cs" />
     <Compile Include="Docking\Themes\IThemeComponent.cs" />
     <Compile Include="Docking\Themes\ThemeMgr.cs" />
     <Compile Include="Docking\Themes\ToolStripRenderer.cs" />

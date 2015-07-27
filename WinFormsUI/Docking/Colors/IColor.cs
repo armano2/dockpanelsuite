@@ -5,7 +5,10 @@ namespace WeifenLuo.WinFormsUI.Docking.Colors
 {
     public enum IKnownColors
     {
-        btnBorder = 0,
+        FormBackground = 0,
+        FormText,
+
+        btnBorder,
         btnBackground,
         btnBackgroundPressed,
         btnBackgroundChecked,
@@ -25,7 +28,6 @@ namespace WeifenLuo.WinFormsUI.Docking.Colors
         toolBackground,
         dragFrom,
 
-        FormBackground,
         ActiveTabOrDocument,
         Active2TabOrDocument,
         ActiveTabOrDocumentText,

@@ -1,12 +1,8 @@
 using System;
 using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
 using System.Reflection;
 using System.Windows.Forms;
 using System.IO;
-using DockSample.Customization;
-using Lextm.SharpSnmpLib;
 using WeifenLuo.WinFormsUI.Docking;
 using WeifenLuo.WinFormsUI.Docking.Themes;
 using WeifenLuo.WinFormsUI.Docking.Colors;
@@ -33,6 +29,8 @@ namespace DockSample
             RightToLeftLayout = showRightToLeft.Checked;
             m_solutionExplorer.RightToLeftLayout = RightToLeftLayout;
             m_deserializeDockContent = new DeserializeDockContent(GetContentFromPersistString);
+
+            updateTheme(new Light());
         }
 
         #region Methods
@@ -165,8 +163,10 @@ namespace DockSample
 
             this.toolBar.Renderer = ThemeMgr.Instance.Renderer;
             this.toolBar.BackColor = ThemeMgr.Instance.getColor(IKnownColors.FormBackground);
+            this.toolBar.ForeColor = ThemeMgr.Instance.getColor(IKnownColors.FormText);
             this.mainMenu.Renderer = ThemeMgr.Instance.Renderer;
             this.mainMenu.BackColor = ThemeMgr.Instance.getColor(IKnownColors.FormBackground);
+            this.mainMenu.ForeColor = ThemeMgr.Instance.getColor(IKnownColors.FormText);
 
             this.menuItemSchemaTheme.Checked = (colorTable is WeifenLuo.WinFormsUI.Docking.Colors.Light);
             this.menuItemSchemaVS2012Dark.Checked = (colorTable is WeifenLuo.WinFormsUI.Docking.Colors.Dark);
