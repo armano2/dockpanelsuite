@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using System.Diagnostics.CodeAnalysis;
+using WeifenLuo.WinFormsUI.Docking.Themes;
 
 namespace WeifenLuo.WinFormsUI.Docking
 {

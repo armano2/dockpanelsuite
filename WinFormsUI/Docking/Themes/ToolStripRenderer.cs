@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace WeifenLuo.WinFormsUI.Docking
 {
-    public class VS2012ToolStripRenderer : ToolStripProfessionalRenderer
+    public class ToolStripRenderer : ToolStripProfessionalRenderer
     {
-        public VS2012ToolStripRenderer(ProfessionalColorTable CustomColorTable)
+        public ToolStripRenderer(ProfessionalColorTable CustomColorTable)
             : base(CustomColorTable)
         {
         }

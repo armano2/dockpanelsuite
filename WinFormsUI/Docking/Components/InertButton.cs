@@ -40,7 +40,6 @@ namespace WeifenLuo.WinFormsUI.Docking
         private Image m_imageDisabled = null;
         private int m_imageIndexEnabled = -1;
         private int m_imageIndexDisabled = -1;
-        private bool m_monochrom = true;
         private ToolTip m_toolTip = null;
         private string m_toolTipText = "";
         private Color m_borderColor = Color.Empty;
@@ -228,19 +227,6 @@ namespace WeifenLuo.WinFormsUI.Docking
                 if (m_isPopup != value)
                 {
                     m_isPopup = value;
-                    Invalidate();
-                }
-            }
-        }
-
-        public bool Monochrome
-        {
-            get    {    return m_monochrom;    }
-            set
-            {
-                if (value != m_monochrom)
-                {
-                    m_monochrom = value;
                     Invalidate();
                 }
             }
@@ -441,27 +427,23 @@ namespace WeifenLuo.WinFormsUI.Docking
         private void DrawImage(Graphics g)
         {
             Image image = this.Enabled ? ImageEnabled : ((ImageDisabled != null) ? ImageDisabled : ImageEnabled);
-            ImageAttributes imageAttr = null;
 
             if (null == image)
                 return;
 
-            if (m_monochrom)
-            {
-                imageAttr = new ImageAttributes();
+            ImageAttributes imageAttr = new ImageAttributes();
 
-                // transform the monochrom image
-                // white -> BackColor
-                // black -> ForeColor
-                ColorMap[] colorMap = new ColorMap[2];
-                colorMap[0] = new ColorMap();
-                colorMap[0].OldColor = Color.White;
-                colorMap[0].NewColor = this.BackColor;
-                colorMap[1] = new ColorMap();
-                colorMap[1].OldColor = Color.Black;
-                colorMap[1].NewColor = this.ForeColor;
-                imageAttr.SetRemapTable(colorMap);
-            }
+            // transform the monochrom image
+            // white -> BackColor
+            // black -> ForeColor
+            ColorMap[] colorMap = new ColorMap[2];
+            colorMap[0] = new ColorMap();
+            colorMap[0].OldColor = Color.White;
+            colorMap[0].NewColor = this.BackColor;
+            colorMap[1] = new ColorMap();
+            colorMap[1].OldColor = Color.Black;
+            colorMap[1].NewColor = this.ForeColor;
+            imageAttr.SetRemapTable(colorMap);
 
             Rectangle rect = new Rectangle(0, 0, image.Width, image.Height);
 

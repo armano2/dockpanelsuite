@@ -5,11 +5,11 @@ using System.Drawing.Drawing2D;
 
 namespace WeifenLuo.WinFormsUI.Docking
 {
-    internal class VS2012DarkAutoHideStrip : AutoHideStripBase
+    internal class ThemeAutoHideStrip : AutoHideStripBase
     {
-        private class TabVS2012Dark : Tab
+        private class TabTheme : Tab
         {
-            internal TabVS2012Dark(IDockContent content)
+            internal TabTheme(IDockContent content)
                 : base(content)
             {
             }
@@ -196,16 +196,14 @@ namespace WeifenLuo.WinFormsUI.Docking
             }
         }
 
-        public VS2012DarkAutoHideStrip(DockPanel panel)
+        public ThemeAutoHideStrip(DockPanel panel)
             : base(panel)
         {
             SetStyle(ControlStyles.ResizeRedraw |
                 ControlStyles.UserPaint |
                 ControlStyles.AllPaintingInWmPaint |
                 ControlStyles.OptimizedDoubleBuffer, true);
-
-            //BackColor = Color.FromArgb(255, 45, 45, 48);
-            BackColor = SystemColors.ControlDark;
+            BackColor = SystemColors.ControlLight;
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -247,7 +245,7 @@ namespace WeifenLuo.WinFormsUI.Docking
 
             foreach (Pane pane in GetPanes(dockState))
             {
-                foreach (TabVS2012Dark tab in pane.AutoHideTabs)
+                foreach (TabTheme tab in pane.AutoHideTabs)
                     DrawTab(g, tab);
             }
             g.Transform = matrixIdentity;
@@ -273,7 +271,7 @@ namespace WeifenLuo.WinFormsUI.Docking
             int x = TabGapLeft + rectTabStrip.X;
             foreach (Pane pane in GetPanes(dockState))
             {
-                foreach (TabVS2012Dark tab in pane.AutoHideTabs)
+                foreach (TabTheme tab in pane.AutoHideTabs)
                 {
                     int width = imageWidth + ImageGapLeft + ImageGapRight +
                         TextRenderer.MeasureText(tab.Content.DockHandler.TabText, TextFont).Width +
@@ -298,7 +296,7 @@ namespace WeifenLuo.WinFormsUI.Docking
             return rectTransformed;
         }
 
-        private GraphicsPath GetTabOutline(TabVS2012Dark tab, bool transformed, bool rtlTransform)
+        private GraphicsPath GetTabOutline(TabTheme tab, bool transformed, bool rtlTransform)
         {
             DockState dockState = tab.Content.DockHandler.DockState;
             Rectangle rectTab = GetTabRectangle(tab, transformed);
@@ -314,7 +312,7 @@ namespace WeifenLuo.WinFormsUI.Docking
             return GraphicsPath;
         }
 
-        private void DrawTab(Graphics g, TabVS2012Dark tab)
+        private void DrawTab(Graphics g, TabTheme tab)
         {
             Rectangle rectTabOrigin = GetTabRectangle(tab);
             if (rectTabOrigin.IsEmpty)
@@ -458,12 +456,12 @@ namespace WeifenLuo.WinFormsUI.Docking
             return transformed ? GetTransformedRectangle(dockState, rect) : rect;
         }
 
-        private Rectangle GetTabRectangle(TabVS2012Dark tab)
+        private Rectangle GetTabRectangle(TabTheme tab)
         {
             return GetTabRectangle(tab, false);
         }
 
-        private Rectangle GetTabRectangle(TabVS2012Dark tab, bool transformed)
+        private Rectangle GetTabRectangle(TabTheme tab, bool transformed)
         {
             DockState dockState = tab.Content.DockHandler.DockState;
             Rectangle rectTabStrip = GetLogicalTabStripRectangle(dockState);
@@ -526,7 +524,7 @@ namespace WeifenLuo.WinFormsUI.Docking
 
                 foreach (Pane pane in GetPanes(state))
                 {
-                    foreach (TabVS2012Dark tab in pane.AutoHideTabs)
+                    foreach (TabTheme tab in pane.AutoHideTabs)
                     {
                         GraphicsPath path = GetTabOutline(tab, true, true);
                         if (path.IsVisible(ptMouse))
@@ -538,11 +536,11 @@ namespace WeifenLuo.WinFormsUI.Docking
             return null;
         }
 
-        private TabVS2012Dark lastSelectedTab = null;
+        private TabTheme lastSelectedTab = null;
 
         protected override void OnMouseHover(EventArgs e)
         {
-            var tab = (TabVS2012Dark)TabHitTest(PointToClient(MousePosition));
+            var tab = (TabTheme)TabHitTest(PointToClient(MousePosition));
             if (tab != null)
             {
                 tab.IsMouseOver = true;
@@ -583,7 +581,7 @@ namespace WeifenLuo.WinFormsUI.Docking
 
         protected override AutoHideStripBase.Tab CreateTab(IDockContent content)
         {
-            return new TabVS2012Dark(content);
+            return new TabTheme(content);
         }
     }
 }

@@ -9,14 +9,14 @@ namespace WeifenLuo.WinFormsUI.Docking
     /// Dock window of Visual Studio 2012 Light theme.
     /// </summary>
     [ToolboxItem(false)]
-    internal class VS2012LightDockWindow : DockWindow
+    internal class ThemeDockWindow : DockWindow
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="VS2012LightDockWindow"/> class.
+        /// Initializes a new instance of the <see cref="ThemeDockWindow"/> class.
         /// </summary>
         /// <param name="dockPanel">The dock panel.</param>
         /// <param name="dockState">State of the dock.</param>
-        public VS2012LightDockWindow(DockPanel dockPanel, DockState dockState) : base(dockPanel, dockState)
+        public ThemeDockWindow(DockPanel dockPanel, DockState dockState) : base(dockPanel, dockState)
         {
         }
 
@@ -44,7 +44,7 @@ namespace WeifenLuo.WinFormsUI.Docking
             }
         }
         
-        internal class VS2012LightDockWindowSplitterControl : SplitterBase
+        internal class ThemeDockWindowSplitterControl : SplitterBase
         {
             private static readonly SolidBrush _horizontalBrush = new SolidBrush(Color.FromArgb(0xFF, 204, 206, 219));
             private static readonly Color[] _verticalSurroundColors = new[] { SystemColors.Control };

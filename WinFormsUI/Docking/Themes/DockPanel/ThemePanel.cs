@@ -3,20 +3,16 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using WeifenLuo.WinFormsUI.Docking.Themes;
+using WeifenLuo.WinFormsUI.Docking.Colors;
 
 namespace WeifenLuo.WinFormsUI.Docking
 {
     /// <summary>
-    /// Visual Studio 2012 Light theme.
+    /// Visual Studio 2012 Theme.
     /// </summary>
-    public class VS2012LightTheme : ThemeBase
+    public class ThemePanel : ThemeBase
     {
-        public VS2012LightTheme()
-        {
-            this.ColorTable = new Lextm.SharpSnmpLib.VS2012LightColorTable();
-            this.Renderer = new VS2012ToolStripRenderer(this.ColorTable);
-        }
-
         /// <summary>
         /// Applies the specified theme to the dock panel.
         /// </summary>
@@ -29,33 +25,33 @@ namespace WeifenLuo.WinFormsUI.Docking
             }
 
             Measures.SplitterSize = 6;
-            dockPanel.Extender.DockPaneCaptionFactory = new VS2012LightDockPaneCaptionFactory();
-            dockPanel.Extender.AutoHideStripFactory = new VS2012LightAutoHideStripFactory();
-            dockPanel.Extender.AutoHideWindowFactory = new VS2012LightAutoHideWindowFactory();
-            dockPanel.Extender.DockPaneStripFactory = new VS2012LightDockPaneStripFactory();
-            dockPanel.Extender.DockPaneSplitterControlFactory = new VS2012LightDockPaneSplitterControlFactory();
-            dockPanel.Extender.DockWindowSplitterControlFactory = new VS2012LightDockWindowSplitterControlFactory();
-            dockPanel.Extender.DockWindowFactory = new VS2012LightDockWindowFactory();
-            dockPanel.Extender.PaneIndicatorFactory = new VS2012LightPaneIndicatorFactory();
-            dockPanel.Extender.PanelIndicatorFactory = new VS2012LightPanelIndicatorFactory();
-            dockPanel.Extender.DockOutlineFactory = new VS2012LightDockOutlineFactory();
-            dockPanel.Skin = CreateVisualStudio2012Light();
+            dockPanel.Extender.DockPaneCaptionFactory = new ThemeDockPaneCaptionFactory();
+            dockPanel.Extender.AutoHideStripFactory = new ThemeAutoHideStripFactory();
+            dockPanel.Extender.AutoHideWindowFactory = new ThemeAutoHideWindowFactory();
+            dockPanel.Extender.DockPaneStripFactory = new ThemeDockPaneStripFactory();
+            dockPanel.Extender.DockPaneSplitterControlFactory = new ThemeDockPaneSplitterControlFactory();
+            dockPanel.Extender.DockWindowSplitterControlFactory = new ThemeDockWindowSplitterControlFactory();
+            dockPanel.Extender.DockWindowFactory = new ThemeDockWindowFactory();
+            dockPanel.Extender.PaneIndicatorFactory = new ThemePaneIndicatorFactory();
+            dockPanel.Extender.PanelIndicatorFactory = new ThemePanelIndicatorFactory();
+            dockPanel.Extender.DockOutlineFactory = new ThemeDockOutlineFactory();
+            dockPanel.Skin = CreatePanelThemeValues();
         }
 
-        private class VS2012LightDockOutlineFactory : DockPanelExtender.IDockOutlineFactory
+        private class ThemeDockOutlineFactory : DockPanelExtender.IDockOutlineFactory
         {
             public DockOutlineBase CreateDockOutline()
             {
-                return new VS2012LightDockOutline();
+                return new ThemeDockOutline();
             }
 
-            private class VS2012LightDockOutline : DockOutlineBase
+            private class ThemeDockOutline : DockOutlineBase
             {
-                public VS2012LightDockOutline()
+                public ThemeDockOutline()
                 {
                     m_dragForm = new DragForm();
                     SetDragForm(Rectangle.Empty);
-                    DragForm.BackColor = Color.FromArgb(0xff, 91, 173, 255);
+                    DragForm.BackColor = ThemeMgr.Instance.getColor(KnownColors.dragFrom);
                     DragForm.Opacity = 0.5;
                     DragForm.Show(false);
                 }
@@ -206,27 +202,28 @@ namespace WeifenLuo.WinFormsUI.Docking
             }
         }
 
-        private class VS2012LightPanelIndicatorFactory : DockPanelExtender.IPanelIndicatorFactory
+        private class ThemePanelIndicatorFactory : DockPanelExtender.IPanelIndicatorFactory
         {
             public DockPanel.IPanelIndicator CreatePanelIndicator(DockStyle style)
             {
-                return new VS2012LightPanelIndicator(style);
+                return new ThemePanelIndicator(style);
             }
 
-            private class VS2012LightPanelIndicator : PictureBox, DockPanel.IPanelIndicator
+            private class ThemePanelIndicator : PictureBox, DockPanel.IPanelIndicator
             {
                 private static Image _imagePanelLeft = Resources.DockIndicator_PanelLeft_VS2012;
                 private static Image _imagePanelRight = Resources.DockIndicator_PanelRight_VS2012;
                 private static Image _imagePanelTop = Resources.DockIndicator_PanelTop_VS2012;
                 private static Image _imagePanelBottom = Resources.DockIndicator_PanelBottom_VS2012;
                 private static Image _imagePanelFill = Resources.DockIndicator_PanelFill_VS2012;
+
                 private static Image _imagePanelLeftActive = Resources.DockIndicator_PanelLeft_VS2012;
                 private static Image _imagePanelRightActive = Resources.DockIndicator_PanelRight_VS2012;
                 private static Image _imagePanelTopActive = Resources.DockIndicator_PanelTop_VS2012;
                 private static Image _imagePanelBottomActive = Resources.DockIndicator_PanelBottom_VS2012;
                 private static Image _imagePanelFillActive = Resources.DockIndicator_PanelFill_VS2012;
 
-                public VS2012LightPanelIndicator(DockStyle dockStyle)
+                public ThemePanelIndicator(DockStyle dockStyle)
                 {
                     m_dockStyle = dockStyle;
                     SizeMode = PictureBoxSizeMode.AutoSize;
@@ -315,14 +312,14 @@ namespace WeifenLuo.WinFormsUI.Docking
             }
         }
 
-        private class VS2012LightPaneIndicatorFactory : DockPanelExtender.IPaneIndicatorFactory
+        private class ThemePaneIndicatorFactory : DockPanelExtender.IPaneIndicatorFactory
         {
             public DockPanel.IPaneIndicator CreatePaneIndicator()
             {
-                return new VS2012LightPaneIndicator();
+                return new ThemePaneIndicator();
             }
 
-            private class VS2012LightPaneIndicator : PictureBox, DockPanel.IPaneIndicator
+            private class ThemePaneIndicator : PictureBox, DockPanel.IPaneIndicator
             {
                 private static Bitmap _bitmapPaneDiamond = Resources.DockIndicator_PaneDiamond_VS2012;
                 private static Bitmap _bitmapPaneDiamondLeft = Resources.DockIndicator_PaneDiamond_Fill_VS2012;
@@ -344,7 +341,7 @@ namespace WeifenLuo.WinFormsUI.Docking
 
                 private GraphicsPath _displayingGraphicsPath = DrawHelper.CalculateGraphicsPathFromBitmap(_bitmapPaneDiamond);
 
-                public VS2012LightPaneIndicator()
+                public ThemePaneIndicator()
                 {
                     SizeMode = PictureBoxSizeMode.AutoSize;
                     Image = _bitmapPaneDiamond;
@@ -399,106 +396,107 @@ namespace WeifenLuo.WinFormsUI.Docking
             }
         }
 
-        private class VS2012LightAutoHideWindowFactory : DockPanelExtender.IAutoHideWindowFactory
+        private class ThemeAutoHideWindowFactory : DockPanelExtender.IAutoHideWindowFactory
         {
             public DockPanel.AutoHideWindowControl CreateAutoHideWindow(DockPanel panel)
             {
-                return new VS2012LightAutoHideWindowControl(panel);
+                return new ThemeAutoHideWindowControl(panel);
             }
         }
 
-        private class VS2012LightDockPaneSplitterControlFactory : DockPanelExtender.IDockPaneSplitterControlFactory
+        private class ThemeDockPaneSplitterControlFactory : DockPanelExtender.IDockPaneSplitterControlFactory
         {
             public DockPane.SplitterControlBase CreateSplitterControl(DockPane pane)
             {
-                return new VS2012LightSplitterControl(pane);
+                return new ThemeSplitterControl(pane);
             }
         }
 
-        private class VS2012LightDockWindowSplitterControlFactory : DockPanelExtender.IDockWindowSplitterControlFactory
+        private class ThemeDockWindowSplitterControlFactory : DockPanelExtender.IDockWindowSplitterControlFactory
         {
             public SplitterBase CreateSplitterControl()
             {
-                return new VS2012LightDockWindow.VS2012LightDockWindowSplitterControl();
+                return new ThemeDockWindow.ThemeDockWindowSplitterControl();
             }
         }
 
-        private class VS2012LightDockPaneStripFactory : DockPanelExtender.IDockPaneStripFactory
+        private class ThemeDockPaneStripFactory : DockPanelExtender.IDockPaneStripFactory
         {
             public DockPaneStripBase CreateDockPaneStrip(DockPane pane)
             {
-                return new VS2012LightDockPaneStrip(pane);
+                return new ThemeDockPaneStrip(pane);
             }
         }
 
-        private class VS2012LightAutoHideStripFactory : DockPanelExtender.IAutoHideStripFactory
+        private class ThemeAutoHideStripFactory : DockPanelExtender.IAutoHideStripFactory
         {
             public AutoHideStripBase CreateAutoHideStrip(DockPanel panel)
             {
-                return new VS2012LightAutoHideStrip(panel);
+                return new ThemeAutoHideStrip(panel);
             }
         }
 
-        private class VS2012LightDockPaneCaptionFactory : DockPanelExtender.IDockPaneCaptionFactory
+        private class ThemeDockPaneCaptionFactory : DockPanelExtender.IDockPaneCaptionFactory
         {
             public DockPaneCaptionBase CreateDockPaneCaption(DockPane pane)
             {
-                return new VS2012LightDockPaneCaption(pane);
+                return new ThemeDockPaneCaption(pane);
             }
         }
 
-        private class VS2012LightDockWindowFactory : DockPanelExtender.IDockWindowFactory
+        private class ThemeDockWindowFactory : DockPanelExtender.IDockWindowFactory
         {
             public DockWindow CreateDockWindow(DockPanel dockPanel, DockState dockState)
             {
-                return new VS2012LightDockWindow(dockPanel, dockState);
+                return new ThemeDockWindow(dockPanel, dockState);
             }
         }
 
-        public static DockPanelSkin CreateVisualStudio2012Light()
+        public static DockPanelSkin CreatePanelThemeValues()
         {
-            var specialBlue = Color.FromArgb(0xFF, 0x00, 0x7A, 0xCC);
-            var dot = Color.FromArgb(80, 170, 220);
-            var activeTab = specialBlue;
-            var mouseHoverTab = Color.FromArgb(0xFF, 28, 151, 234);
-            var inactiveTab = SystemColors.Control;
-            var lostFocusTab = Color.FromArgb(0xFF, 204, 206, 219);
+            var FormBackground = ThemeMgr.Instance.getColor(KnownColors.FormBackground);
+            var ActiveTabOrDocument = ThemeMgr.Instance.getColor(KnownColors.ActiveTabOrDocument);
+            var Active2TabOrDocument = ThemeMgr.Instance.getColor(KnownColors.Active2TabOrDocument);
+            var ActiveTabOrDocumentText = ThemeMgr.Instance.getColor(KnownColors.ActiveTabOrDocumentText);
+            var UnactiveTabOrDocumentText = ThemeMgr.Instance.getColor(KnownColors.UnactiveTabOrDocumentText);
+            var ActiveMultiTabBackground = ThemeMgr.Instance.getColor(KnownColors.ActiveMultiTabBackground);
+            var ActiveMultiTabText = ThemeMgr.Instance.getColor(KnownColors.ActiveMultiTabText);
+
+            // ------------------------------------------------------------
             var skin = new DockPanelSkin();
-
-            skin.AutoHideStripSkin.DockStripGradient.StartColor = specialBlue;
-            skin.AutoHideStripSkin.DockStripGradient.EndColor = SystemColors.ControlLight;
-            skin.AutoHideStripSkin.TabGradient.TextColor = SystemColors.ControlDarkDark;
-
-            skin.DockPaneStripSkin.DocumentGradient.DockStripGradient.StartColor = SystemColors.Control;
-            skin.DockPaneStripSkin.DocumentGradient.DockStripGradient.EndColor = SystemColors.Control;
-            skin.DockPaneStripSkin.DocumentGradient.ActiveTabGradient.StartColor = activeTab;
-            skin.DockPaneStripSkin.DocumentGradient.ActiveTabGradient.EndColor = lostFocusTab;
-            skin.DockPaneStripSkin.DocumentGradient.ActiveTabGradient.TextColor = Color.White;
-            skin.DockPaneStripSkin.DocumentGradient.InactiveTabGradient.StartColor = inactiveTab;
-            skin.DockPaneStripSkin.DocumentGradient.InactiveTabGradient.EndColor = mouseHoverTab;
-            skin.DockPaneStripSkin.DocumentGradient.InactiveTabGradient.TextColor = Color.Black;
-
-            skin.DockPaneStripSkin.ToolWindowGradient.DockStripGradient.StartColor = SystemColors.Control;
-            skin.DockPaneStripSkin.ToolWindowGradient.DockStripGradient.EndColor = SystemColors.Control;
-
-            skin.DockPaneStripSkin.ToolWindowGradient.ActiveTabGradient.StartColor = SystemColors.ControlLightLight;
-            skin.DockPaneStripSkin.ToolWindowGradient.ActiveTabGradient.EndColor = SystemColors.ControlLightLight;
-            skin.DockPaneStripSkin.ToolWindowGradient.ActiveTabGradient.TextColor = specialBlue;
-
-            skin.DockPaneStripSkin.ToolWindowGradient.InactiveTabGradient.StartColor = SystemColors.Control;
-            skin.DockPaneStripSkin.ToolWindowGradient.InactiveTabGradient.EndColor = SystemColors.Control;
-            skin.DockPaneStripSkin.ToolWindowGradient.InactiveTabGradient.TextColor = SystemColors.GrayText;
-
-            skin.DockPaneStripSkin.ToolWindowGradient.ActiveCaptionGradient.StartColor = specialBlue;
-            skin.DockPaneStripSkin.ToolWindowGradient.ActiveCaptionGradient.EndColor = dot;
-            skin.DockPaneStripSkin.ToolWindowGradient.ActiveCaptionGradient.LinearGradientMode = LinearGradientMode.Vertical;
-            skin.DockPaneStripSkin.ToolWindowGradient.ActiveCaptionGradient.TextColor = Color.White;
-
-            skin.DockPaneStripSkin.ToolWindowGradient.InactiveCaptionGradient.StartColor = SystemColors.Control;
-            skin.DockPaneStripSkin.ToolWindowGradient.InactiveCaptionGradient.EndColor = SystemColors.ControlDark;
-            skin.DockPaneStripSkin.ToolWindowGradient.InactiveCaptionGradient.LinearGradientMode = LinearGradientMode.Vertical;
-            skin.DockPaneStripSkin.ToolWindowGradient.InactiveCaptionGradient.TextColor = SystemColors.GrayText;
-
+            // Unactived, unselected tabs or documents - Should be same as parent background
+            skin.DockPaneStripSkin.DocumentGradient.DockStripGradient.StartColor = FormBackground;
+            skin.DockPaneStripSkin.DocumentGradient.DockStripGradient.EndColor = FormBackground;
+            skin.DockPaneStripSkin.ToolWindowGradient.DockStripGradient.StartColor = FormBackground;
+            skin.DockPaneStripSkin.ToolWindowGradient.DockStripGradient.EndColor = FormBackground;
+            skin.DockPaneStripSkin.ToolWindowGradient.InactiveCaptionGradient.StartColor = FormBackground;
+            skin.DockPaneStripSkin.ToolWindowGradient.InactiveCaptionGradient.EndColor = FormBackground;
+            skin.DockPaneStripSkin.ToolWindowGradient.InactiveTabGradient.StartColor = FormBackground;
+            skin.DockPaneStripSkin.ToolWindowGradient.InactiveTabGradient.EndColor = FormBackground;
+            skin.DockPaneStripSkin.DocumentGradient.InactiveTabGradient.EndColor = FormBackground;
+            skin.DockPaneStripSkin.DocumentGradient.InactiveTabGradient.StartColor = FormBackground;
+            // Active and selected document/tab header
+            skin.DockPaneStripSkin.DocumentGradient.ActiveTabGradient.StartColor = ActiveTabOrDocument;
+            skin.DockPaneStripSkin.ToolWindowGradient.ActiveCaptionGradient.StartColor = ActiveTabOrDocument;
+            skin.AutoHideStripSkin.DockStripGradient.StartColor = ActiveTabOrDocument;
+            skin.DockPaneStripSkin.ToolWindowGradient.ActiveTabGradient.TextColor = ActiveTabOrDocument;
+            // Active and unselected document/tab header
+            skin.DockPaneStripSkin.DocumentGradient.ActiveTabGradient.EndColor = Active2TabOrDocument;
+            skin.DockPaneStripSkin.ToolWindowGradient.ActiveCaptionGradient.EndColor = Active2TabOrDocument;
+            skin.AutoHideStripSkin.DockStripGradient.EndColor = Active2TabOrDocument;
+            // Active document/tab header text
+            skin.DockPaneStripSkin.DocumentGradient.ActiveTabGradient.TextColor = ActiveTabOrDocumentText;
+            skin.DockPaneStripSkin.ToolWindowGradient.ActiveCaptionGradient.TextColor = ActiveTabOrDocumentText;
+            // Unactive, unselected strip tab text
+            skin.DockPaneStripSkin.ToolWindowGradient.InactiveTabGradient.TextColor = UnactiveTabOrDocumentText;
+            skin.DockPaneStripSkin.ToolWindowGradient.InactiveCaptionGradient.TextColor = UnactiveTabOrDocumentText;
+            skin.DockPaneStripSkin.DocumentGradient.InactiveTabGradient.TextColor = UnactiveTabOrDocumentText;
+            // Active, multitab background
+            skin.DockPaneStripSkin.ToolWindowGradient.ActiveTabGradient.StartColor = ActiveMultiTabBackground;
+            skin.DockPaneStripSkin.ToolWindowGradient.ActiveTabGradient.EndColor = ActiveMultiTabBackground;
+            // ------------------------------------------------------------
+            // Unused, fix it
+            skin.AutoHideStripSkin.TabGradient.TextColor = Color.Red;
             return skin;
         }
     }

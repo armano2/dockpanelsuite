@@ -55,7 +55,7 @@ namespace DockSample
             this.menuItemLockLayout = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemShowDocumentIcon = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItem3 = new System.Windows.Forms.ToolStripSeparator();
-            this.menuItemSchemaVS2012Light = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemSchemaTheme = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemSchemaVS2012Dark = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItem6 = new System.Windows.Forms.ToolStripSeparator();
             this.menuItemDockingMdi = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,8 +84,6 @@ namespace DockSample
             this.toolBarButtonLayoutByXml = new System.Windows.Forms.ToolStripButton();
             this.toolBarButtonDockPanelSkinDemo = new System.Windows.Forms.ToolStripButton();
             this.dockPanel = new WeifenLuo.WinFormsUI.Docking.DockPanel();
-            this.vS2012LightTheme1 = new WeifenLuo.WinFormsUI.Docking.VS2012LightTheme();
-            this.vS2012DarkTheme1 = new WeifenLuo.WinFormsUI.Docking.VS2012DarkTheme();
             this.mainMenu.SuspendLayout();
             this.toolBar.SuspendLayout();
             this.SuspendLayout();
@@ -278,7 +276,7 @@ namespace DockSample
             this.menuItemLockLayout,
             this.menuItemShowDocumentIcon,
             this.menuItem3,
-            this.menuItemSchemaVS2012Light,
+            this.menuItemSchemaTheme,
             this.menuItemSchemaVS2012Dark,
             this.menuItem6,
             this.menuItemDockingMdi,
@@ -312,12 +310,12 @@ namespace DockSample
             this.menuItem3.Name = "menuItem3";
             this.menuItem3.Size = new System.Drawing.Size(252, 6);
             // 
-            // menuItemSchemaVS2012Light
+            // menuItemSchemaTheme
             // 
-            this.menuItemSchemaVS2012Light.Name = "menuItemSchemaVS2012Light";
-            this.menuItemSchemaVS2012Light.Size = new System.Drawing.Size(255, 22);
-            this.menuItemSchemaVS2012Light.Text = "Schema: VS2012 Light";
-            this.menuItemSchemaVS2012Light.Click += new System.EventHandler(this.SetSchema);
+            this.menuItemSchemaTheme.Name = "menuItemSchemaTheme";
+            this.menuItemSchemaTheme.Size = new System.Drawing.Size(255, 22);
+            this.menuItemSchemaTheme.Text = "Schema: VS2012 Light";
+            this.menuItemSchemaTheme.Click += new System.EventHandler(this.SetSchema);
             // 
             // menuItemSchemaVS2012Dark
             // 
@@ -624,9 +622,7 @@ namespace DockSample
         private System.Windows.Forms.ToolStripMenuItem showRightToLeft;
         private System.Windows.Forms.ToolStripMenuItem exitWithoutSavingLayout;
         private System.Windows.Forms.ToolStripButton toolBarButtonDockPanelSkinDemo;
-        private System.Windows.Forms.ToolStripMenuItem menuItemSchemaVS2012Light;
+        private System.Windows.Forms.ToolStripMenuItem menuItemSchemaTheme;
         private System.Windows.Forms.ToolStripMenuItem menuItemSchemaVS2012Dark;
-        private WeifenLuo.WinFormsUI.Docking.VS2012LightTheme vS2012LightTheme1;
-        private WeifenLuo.WinFormsUI.Docking.VS2012DarkTheme vS2012DarkTheme1;
     }
 }

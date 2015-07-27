@@ -41,31 +41,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Docking\DockPanel.SplitterDragHandler.cs">
+    <Compile Include="Docking\Colors\Dark.cs" />
+    <Compile Include="Docking\Colors\IColor.cs" />
+    <Compile Include="Docking\Colors\Light.cs" />
+    <Compile Include="Docking\Docks\DockPanel.SplitterDragHandler.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\DockPanel.DragHandler.cs">
+    <Compile Include="Docking\Docks\DockPanel.DragHandler.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\DragForm.cs">
+    <Compile Include="Docking\Docks\DragForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Docking\DockPanel.MdiClientController.cs">
+    <Compile Include="Docking\Docks\DockPanel.MdiClientController.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\AutoHideStripBase.cs">
+    <Compile Include="Docking\Docks\AutoHideStripBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\DrawingRoutines.cs" />
-    <Compile Include="Docking\InertButton.cs">
+    <Compile Include="Docking\Docks\DrawingRoutines.cs" />
+    <Compile Include="Docking\Components\InertButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\InertButtonBase.cs">
+    <Compile Include="Docking\Components\InertButtonBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\DockPanelSkin.cs">
+    <Compile Include="Docking\Docks\DockPanelSkin.cs">
     </Compile>
-    <Compile Include="Docking\ITheme.cs" />
     <Compile Include="Docking\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -76,124 +78,102 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourcesVS2012Dark.resx</DependentUpon>
     </Compile>
+    <Compile Include="Docking\Themes\ColorTable.cs" />
+    <Compile Include="Docking\Themes\DockPanel\ThemePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Themes\ITheme.cs" />
     <Compile Include="Docking\StringsVS2003.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StringsVS2003.resx</DependentUpon>
     </Compile>
-    <Compile Include="Docking\ThemeBase.cs">
+    <Compile Include="Docking\Docks\ThemeBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\DockPanel.AutoHideWindow.cs">
+    <Compile Include="Docking\Docks\DockPanel.AutoHideWindow.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\Themes\Dark\VS2012DarkColorTable.cs" />
-    <Compile Include="Docking\Themes\Dark\VS2012DarkAutoHideWindowControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Docking\Themes\Dark\VS2012DarkAutoHideStrip.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Docking\Themes\Dark\VS2012DarkDockPaneCaption.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Docking\Themes\Light\VS2012LightColorTable.cs" />
-    <Compile Include="Docking\Themes\Dark\VS2012DarkDockPaneStrip.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Docking\Themes\Dark\VS2012DarkSplitterControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Docking\Themes\Dark\VS2012DarkTheme.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Docking\Themes\Dark\VS2012DarkDockWindow.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Docking\Themes\VS2012ToolStripExtender.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Docking\Themes\VS2012ToolStripExtender.Designer.cs" />
-    <Compile Include="Docking\Themes\VS2012ToolStripRenderer.cs" />
-    <Compile Include="Docking\VisibleNestedPaneCollection.cs" />
-    <Compile Include="Docking\DockAreasEditor.cs" />
-    <Compile Include="Docking\DockContent.cs">
+    <Compile Include="Docking\Colors\VS2012DarkColorTable.cs" />
+    <Compile Include="Docking\Themes\IThemeComponent.cs" />
+    <Compile Include="Docking\Themes\ThemeMgr.cs" />
+    <Compile Include="Docking\Themes\ToolStripRenderer.cs" />
+    <Compile Include="Docking\Docks\VisibleNestedPaneCollection.cs" />
+    <Compile Include="Docking\Docks\DockAreasEditor.cs" />
+    <Compile Include="Docking\Components\DockContent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Docking\DockContentCollection.cs" />
-    <Compile Include="Docking\DockContentHandler.cs" />
-    <Compile Include="Docking\DockPanel.DockDragHandler.cs">
+    <Compile Include="Docking\Docks\DockContentCollection.cs" />
+    <Compile Include="Docking\Docks\DockContentHandler.cs" />
+    <Compile Include="Docking\Docks\DockPanel.DockDragHandler.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Docking\Helpers\DockHelper.cs" />
-    <Compile Include="Docking\NestedPaneCollection.cs" />
-    <Compile Include="Docking\DockOutlineBase.cs" />
-    <Compile Include="Docking\DockPane.cs">
+    <Compile Include="Docking\Docks\NestedPaneCollection.cs" />
+    <Compile Include="Docking\Docks\DockOutlineBase.cs" />
+    <Compile Include="Docking\Docks\DockPane.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Docking\DockPaneCaptionBase.cs">
+    <Compile Include="Docking\Docks\DockPaneCaptionBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\DockPaneCollection.cs" />
-    <Compile Include="Docking\DockPanel.cs" />
-    <Compile Include="Docking\DockPanelExtender.cs" />
-    <Compile Include="Docking\DockPanel.Persistor.cs">
+    <Compile Include="Docking\Docks\DockPaneCollection.cs" />
+    <Compile Include="Docking\Docks\DockPanel.cs" />
+    <Compile Include="Docking\Docks\DockPanelExtender.cs" />
+    <Compile Include="Docking\Docks\DockPanel.Persistor.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\DockPane.SplitterControl.cs">
+    <Compile Include="Docking\Docks\DockPane.SplitterControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Docking\DockPaneStripBase.cs">
+    <Compile Include="Docking\Docks\DockPaneStripBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\DockWindow.cs">
+    <Compile Include="Docking\Docks\DockWindow.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\DockWindowCollection.cs" />
-    <Compile Include="Docking\DockWindow.SplitterControl.cs">
+    <Compile Include="Docking\Docks\DockWindowCollection.cs" />
+    <Compile Include="Docking\Docks\DockWindow.SplitterControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\DummyControl.cs">
+    <Compile Include="Docking\Docks\DummyControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\Enums.cs" />
-    <Compile Include="Docking\DockContentEventArgs.cs" />
-    <Compile Include="Docking\FloatWindow.cs">
+    <Compile Include="Docking\Docks\Enums.cs" />
+    <Compile Include="Docking\Docks\DockContentEventArgs.cs" />
+    <Compile Include="Docking\Docks\FloatWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Docking\FloatWindowCollection.cs" />
-    <Compile Include="Docking\DockPanel.FocusManager.cs">
+    <Compile Include="Docking\Docks\FloatWindowCollection.cs" />
+    <Compile Include="Docking\Docks\DockPanel.FocusManager.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\Interfaces.cs" />
-    <Compile Include="Docking\Measures.cs" />
-    <Compile Include="Docking\NestedDockingStatus.cs" />
+    <Compile Include="Docking\Docks\Interfaces.cs" />
+    <Compile Include="Docking\Docks\Measures.cs" />
+    <Compile Include="Docking\Docks\NestedDockingStatus.cs" />
     <Compile Include="Docking\SplitterBase.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Docking\Helpers\DrawHelper.cs" />
-    <Compile Include="Docking\Localization.cs" />
+    <Compile Include="Docking\Docks\Localization.cs" />
     <Compile Include="Docking\Helpers\ResourceHelper.cs" />
     <Compile Include="Docking\Helpers\Win32Helper.cs" />
-    <Compile Include="Docking\Themes\Light\VS2012LightAutoHideStrip.cs">
+    <Compile Include="Docking\Themes\DockPanel\ThemeAutoHideStrip.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\Themes\Light\VS2012LightAutoHideWindowControl.cs">
+    <Compile Include="Docking\Themes\DockPanel\ThemeAutoHideWindowControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\Themes\Light\VS2012LightDockPaneCaption.cs">
+    <Compile Include="Docking\Themes\DockPanel\ThemeDockPaneCaption.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\Themes\Light\VS2012LightDockPaneStrip.cs">
+    <Compile Include="Docking\Themes\DockPanel\ThemeDockPaneStrip.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\Themes\Light\VS2012LightDockWindow.cs">
+    <Compile Include="Docking\Themes\DockPanel\ThemeDockWindow.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\Themes\Light\VS2012LightSplitterControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Docking\Themes\Light\VS2012LightTheme.cs">
+    <Compile Include="Docking\Themes\DockPanel\ThemeSplitterControl.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -213,6 +193,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Docking\ResourcesVS2012Dark.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>ResourcesVS2012Dark.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Docking\Strings.resx">
@@ -226,7 +207,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Docking\DockPanel.Appearance.cs">
+    <Compile Include="Docking\Docks\DockPanel.Appearance.cs">
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
@@ -242,28 +223,28 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Docking\DockPanel.bmp" />
+    <EmbeddedResource Include="Docking\Docks\DockPanel.bmp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Docking\Resources\ActiveTabHover_Close.png" />
     <None Include="Docking\Resources\ActiveTab_Close.png" />
-    <None Include="Docking\ResourcesVS2012Light\DockIndicator_PaneDiamond_Fill_VS2012.png" />
-    <None Include="Docking\ResourcesVS2012Light\DockIndicator_PaneDiamond_HotspotIndex_VS2012.png" />
-    <None Include="Docking\ResourcesVS2012Light\DockIndicator_PaneDiamond_Hotspot_VS2012.png" />
-    <None Include="Docking\ResourcesVS2012Light\Dockindicator_PaneDiamond_VS2012.png" />
-    <None Include="Docking\ResourcesVS2012Light\DockIndicator_PanelBottom_VS2012.png" />
-    <None Include="Docking\ResourcesVS2012Light\DockIndicator_PanelFill_VS2012.png" />
-    <None Include="Docking\ResourcesVS2012Light\DockIndicator_PanelLeft_VS2012.png" />
-    <None Include="Docking\ResourcesVS2012Light\DockIndicator_PanelRight_VS2012.png" />
-    <None Include="Docking\ResourcesVS2012Light\DockIndicator_PanelTop_VS2012.png" />
+    <None Include="Docking\ResourcesTheme\DockIndicator_PaneDiamond_Fill_VS2012.png" />
+    <None Include="Docking\ResourcesTheme\DockIndicator_PaneDiamond_HotspotIndex_VS2012.png" />
+    <None Include="Docking\ResourcesTheme\DockIndicator_PaneDiamond_Hotspot_VS2012.png" />
+    <None Include="Docking\ResourcesTheme\Dockindicator_PaneDiamond_VS2012.png" />
+    <None Include="Docking\ResourcesTheme\DockIndicator_PanelBottom_VS2012.png" />
+    <None Include="Docking\ResourcesTheme\DockIndicator_PanelFill_VS2012.png" />
+    <None Include="Docking\ResourcesTheme\DockIndicator_PanelLeft_VS2012.png" />
+    <None Include="Docking\ResourcesTheme\DockIndicator_PanelRight_VS2012.png" />
+    <None Include="Docking\ResourcesTheme\DockIndicator_PanelTop_VS2012.png" />
     <None Include="Docking\Resources\InactiveTabHover_Close.png" />
     <None Include="Docking\Resources\LostFocusTabHover_Close.png" />
     <None Include="Docking\Resources\LostFocusTab_Close.png" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Docking\ResourcesVS2012Dark\LostFocusTab_DarkHover_Close.png" />
-    <Content Include="Docking\ResourcesVS2012Dark\LostFocusTab_Dark_Close.png" />
+    <Content Include="Docking\ResourcesTheme\LostFocusTab_DarkHover_Close.png" />
+    <Content Include="Docking\ResourcesTheme\LostFocusTab_Dark_Close.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <UsingTask Condition=" '$(Configuration)' == 'Release' AND '$(OS)' == 'Windows_NT' AND Exists('..\gendarme\GendarmeMsBuild.dll')" AssemblyFile="..\gendarme\GendarmeMsBuild.dll" TaskName="GendarmeMsBuild.Gendarme" />

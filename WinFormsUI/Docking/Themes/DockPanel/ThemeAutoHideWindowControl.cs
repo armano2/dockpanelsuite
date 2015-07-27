@@ -4,14 +4,14 @@ using System.Windows.Forms;
 
 namespace WeifenLuo.WinFormsUI.Docking
 {
-    internal class VS2012DarkAutoHideWindowControl : DockPanel.AutoHideWindowControl
+    internal class ThemeAutoHideWindowControl : DockPanel.AutoHideWindowControl
     {
-        private class VS2012DarkAutoHideWindowSplitterControl : SplitterBase
+        private class ThemeAutoHideWindowSplitterControl : SplitterBase
         {
             private static readonly SolidBrush _horizontalBrush = new SolidBrush(Color.FromArgb(0xFF, 204, 206, 219));
             private static readonly Color[] _verticalSurroundColors = new[] { SystemColors.Control };
 
-            public VS2012DarkAutoHideWindowSplitterControl(DockPanel.AutoHideWindowControl autoHideWindow)
+            public ThemeAutoHideWindowSplitterControl(DockPanel.AutoHideWindowControl autoHideWindow)
             {
                 AutoHideWindow = autoHideWindow;
             }
@@ -67,9 +67,9 @@ namespace WeifenLuo.WinFormsUI.Docking
             }
         }
 
-        public VS2012DarkAutoHideWindowControl(DockPanel dockPanel) : base(dockPanel)
+        public ThemeAutoHideWindowControl(DockPanel dockPanel) : base(dockPanel)
         {
-            m_splitter = new VS2012DarkAutoHideWindowSplitterControl(this);
+            m_splitter = new ThemeAutoHideWindowSplitterControl(this);
             Controls.Add(m_splitter);
         }
 

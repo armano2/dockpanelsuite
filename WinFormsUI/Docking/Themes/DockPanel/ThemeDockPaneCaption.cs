@@ -6,13 +6,13 @@ using System.ComponentModel;
 
 namespace WeifenLuo.WinFormsUI.Docking
 {
-    internal class VS2012DarkDockPaneCaption : DockPaneCaptionBase
+    internal class ThemeDockPaneCaption : DockPaneCaptionBase
     {
         private sealed class InertButton : InertButtonBase
         {
             private Bitmap m_image, m_imageAutoHide;
 
-            public InertButton(VS2012DarkDockPaneCaption dockPaneCaption, Bitmap image, Bitmap imageAutoHide)
+            public InertButton(ThemeDockPaneCaption dockPaneCaption, Bitmap image, Bitmap imageAutoHide)
                 : base()
             {
                 m_dockPaneCaption = dockPaneCaption;
@@ -21,8 +21,8 @@ namespace WeifenLuo.WinFormsUI.Docking
                 RefreshChanges();
             }
 
-            private VS2012DarkDockPaneCaption m_dockPaneCaption;
-            private VS2012DarkDockPaneCaption DockPaneCaption
+            private ThemeDockPaneCaption m_dockPaneCaption;
+            private ThemeDockPaneCaption DockPaneCaption
             {
                 get { return m_dockPaneCaption; }
             }
@@ -168,7 +168,7 @@ namespace WeifenLuo.WinFormsUI.Docking
 
         private ToolTip m_toolTip;
 
-        public VS2012DarkDockPaneCaption(DockPane pane) : base(pane)
+        public ThemeDockPaneCaption(DockPane pane) : base(pane)
         {
             SuspendLayout();
 

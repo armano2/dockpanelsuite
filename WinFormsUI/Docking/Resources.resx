@@ -125,31 +125,31 @@
     <value>Resources\ActiveTab_Close.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DockIndicator_PaneDiamond_Fill_VS2012" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>ResourcesVS2012Light\DockIndicator_PaneDiamond_Fill_VS2012.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>ResourcesTheme\DockIndicator_PaneDiamond_Fill_VS2012.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DockIndicator_PaneDiamond_HotspotIndex_VS2012" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>ResourcesVS2012Light\DockIndicator_PaneDiamond_HotspotIndex_VS2012.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>ResourcesTheme\DockIndicator_PaneDiamond_HotspotIndex_VS2012.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DockIndicator_PaneDiamond_Hotspot_VS2012" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>ResourcesVS2012Light\DockIndicator_PaneDiamond_Hotspot_VS2012.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>ResourcesTheme\DockIndicator_PaneDiamond_Hotspot_VS2012.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DockIndicator_PaneDiamond_VS2012" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>ResourcesVS2012Light\DockIndicator_PaneDiamond_VS2012.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>ResourcesTheme\DockIndicator_PaneDiamond_VS2012.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DockIndicator_PanelBottom_VS2012" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>ResourcesVS2012Light\DockIndicator_PanelBottom_VS2012.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>ResourcesTheme\DockIndicator_PanelBottom_VS2012.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DockIndicator_PanelFill_VS2012" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>ResourcesVS2012Light\DockIndicator_PanelFill_VS2012.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>ResourcesTheme\DockIndicator_PanelFill_VS2012.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DockIndicator_PanelLeft_VS2012" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>ResourcesVS2012Light\DockIndicator_PanelLeft_VS2012.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>ResourcesTheme\DockIndicator_PanelLeft_VS2012.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DockIndicator_PanelRight_VS2012" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>ResourcesVS2012Light\DockIndicator_PanelRight_VS2012.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>ResourcesTheme\DockIndicator_PanelRight_VS2012.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DockIndicator_PanelTop_VS2012" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>ResourcesVS2012Light\DockIndicator_PanelTop_VS2012.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>ResourcesTheme\DockIndicator_PanelTop_VS2012.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DockPane_AutoHide" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\DockPane_AutoHide.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

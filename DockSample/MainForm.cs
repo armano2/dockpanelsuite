@@ -8,6 +8,7 @@ using System.IO;
 using DockSample.Customization;
 using Lextm.SharpSnmpLib;
 using WeifenLuo.WinFormsUI.Docking;
+using WeifenLuo.WinFormsUI.Docking.Themes;
 
 namespace DockSample
 {
@@ -20,7 +21,6 @@ namespace DockSample
         private DummyToolbox m_toolbox;
         private DummyOutputWindow m_outputWindow;
         private DummyTaskList m_taskList;
-        private VS2012ToolStripExtender toolStripExtender;
 
         public MainForm()
         {
@@ -32,8 +32,6 @@ namespace DockSample
             RightToLeftLayout = showRightToLeft.Checked;
             m_solutionExplorer.RightToLeftLayout = RightToLeftLayout;
             m_deserializeDockContent = new DeserializeDockContent(GetContentFromPersistString);
-            toolStripExtender = new VS2012ToolStripExtender();
-            updateTheme(vS2012LightTheme1);
         }
 
         #region Methods
@@ -145,25 +143,29 @@ namespace DockSample
 
         private void SetSchema(object sender, System.EventArgs e)
         {
-            if (sender == menuItemSchemaVS2012Light)
+            if (sender == menuItemSchemaTheme)
             {
-                updateTheme(vS2012LightTheme1);
+                updateTheme(new WeifenLuo.WinFormsUI.Docking.Colors.Light());
             }
             else if (sender == menuItemSchemaVS2012Dark)
             {
-                updateTheme(vS2012DarkTheme1);
+                updateTheme(new WeifenLuo.WinFormsUI.Docking.Colors.Dark());
             }
         }
 
-        private void updateTheme(ThemeBase theme)
+        private void updateTheme(WeifenLuo.WinFormsUI.Docking.Colors.IColor colorTable)
         {
-            CloseAllContents(); // TODO: we have to remove this...
+            //CloseAllContents(); // TODO: we have to remove this...
 
-            toolStripExtender.SetTheme(theme);
-            toolStripExtender.SetVS2012Style(this);
+            ThemeMgr.Instance.SetColorTable(colorTable);
+            this.dockPanel.Theme = ThemeMgr.Instance.DockPanelTheme;
+            this.dockPanel.Skin = ThemePanel.CreatePanelThemeValues();
 
-            this.menuItemSchemaVS2012Light.Checked = (theme is VS2012LightTheme);
-            this.menuItemSchemaVS2012Dark.Checked = (theme is VS2012DarkTheme);
+            this.toolBar.Renderer = ThemeMgr.Instance.Renderer;
+            this.mainMenu.Renderer = ThemeMgr.Instance.Renderer;
+
+            this.menuItemSchemaTheme.Checked = (colorTable is WeifenLuo.WinFormsUI.Docking.Colors.Light);
+            this.menuItemSchemaVS2012Dark.Checked = (colorTable is WeifenLuo.WinFormsUI.Docking.Colors.Dark);
         }
 
         private void SetDocumentStyle(object sender, System.EventArgs e)
