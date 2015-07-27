@@ -87,15 +87,27 @@
     <Compile Include="Docking\DockPanel.AutoHideWindow.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\Themes\VS2012DarkColorTable.cs" />
-    <Compile Include="Docking\Themes\VS2012LightColorTable.cs" />
-    <Compile Include="Docking\Themes\VS2012DarkDockPaneStrip.cs">
+    <Compile Include="Docking\Themes\Dark\VS2012DarkColorTable.cs" />
+    <Compile Include="Docking\Themes\Dark\VS2012DarkAutoHideWindowControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\Themes\VS2012DarkSplitterControl.cs">
+    <Compile Include="Docking\Themes\Dark\VS2012DarkAutoHideStrip.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\Themes\VS2012DarkTheme.cs">
+    <Compile Include="Docking\Themes\Dark\VS2012DarkDockPaneCaption.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Themes\Light\VS2012LightColorTable.cs" />
+    <Compile Include="Docking\Themes\Dark\VS2012DarkDockPaneStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Themes\Dark\VS2012DarkSplitterControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Themes\Dark\VS2012DarkTheme.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Themes\Dark\VS2012DarkDockWindow.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Docking\Themes\VS2012ToolStripExtender.cs">
@@ -163,25 +175,25 @@
     <Compile Include="Docking\Localization.cs" />
     <Compile Include="Docking\Helpers\ResourceHelper.cs" />
     <Compile Include="Docking\Helpers\Win32Helper.cs" />
-    <Compile Include="Docking\Themes\VS2012LightAutoHideStrip.cs">
+    <Compile Include="Docking\Themes\Light\VS2012LightAutoHideStrip.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\Themes\VS2012LightAutoHideWindowControl.cs">
+    <Compile Include="Docking\Themes\Light\VS2012LightAutoHideWindowControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\Themes\VS2012LightDockPaneCaption.cs">
+    <Compile Include="Docking\Themes\Light\VS2012LightDockPaneCaption.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\Themes\VS2012LightDockPaneStrip.cs">
+    <Compile Include="Docking\Themes\Light\VS2012LightDockPaneStrip.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\Themes\VS2012LightDockWindow.cs">
+    <Compile Include="Docking\Themes\Light\VS2012LightDockWindow.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\Themes\VS2012LightSplitterControl.cs">
+    <Compile Include="Docking\Themes\Light\VS2012LightSplitterControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Docking\Themes\VS2012LightTheme.cs">
+    <Compile Include="Docking\Themes\Light\VS2012LightTheme.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

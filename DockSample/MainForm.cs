@@ -158,7 +158,9 @@ namespace DockSample
         private void updateTheme(ThemeBase theme)
         {
             CloseAllContents(); // TODO: we have to remove this...
-            toolStripExtender.SetVS2012Style(this, theme);
+
+            toolStripExtender.SetTheme(theme);
+            toolStripExtender.SetVS2012Style(this);
 
             this.menuItemSchemaVS2012Light.Checked = (theme is VS2012LightTheme);
             this.menuItemSchemaVS2012Dark.Checked = (theme is VS2012DarkTheme);

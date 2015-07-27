@@ -210,7 +210,7 @@ namespace WeifenLuo.WinFormsUI.Docking
         {
             public DockPanel.IPanelIndicator CreatePanelIndicator(DockStyle style)
             {
-				return new VS2012DarkPanelIndicator( style );
+				return new VS2012DarkPanelIndicator(style);
             }
 
             private class VS2012DarkPanelIndicator : PictureBox, DockPanel.IPanelIndicator
@@ -220,13 +220,14 @@ namespace WeifenLuo.WinFormsUI.Docking
                 private static Image _imagePanelTop = Resources.DockIndicator_PanelTop_VS2012;
                 private static Image _imagePanelBottom = Resources.DockIndicator_PanelBottom_VS2012;
                 private static Image _imagePanelFill = Resources.DockIndicator_PanelFill_VS2012;
+
                 private static Image _imagePanelLeftActive = Resources.DockIndicator_PanelLeft_VS2012;
                 private static Image _imagePanelRightActive = Resources.DockIndicator_PanelRight_VS2012;
                 private static Image _imagePanelTopActive = Resources.DockIndicator_PanelTop_VS2012;
                 private static Image _imagePanelBottomActive = Resources.DockIndicator_PanelBottom_VS2012;
                 private static Image _imagePanelFillActive = Resources.DockIndicator_PanelFill_VS2012;
 
-				public VS2012DarkPanelIndicator( DockStyle dockStyle )
+				public VS2012DarkPanelIndicator(DockStyle dockStyle)
                 {
                     m_dockStyle = dockStyle;
                     SizeMode = PictureBoxSizeMode.AutoSize;
@@ -403,7 +404,7 @@ namespace WeifenLuo.WinFormsUI.Docking
         {
             public DockPanel.AutoHideWindowControl CreateAutoHideWindow(DockPanel panel)
             {
-                return new VS2012LightAutoHideWindowControl(panel);
+                return new VS2012DarkAutoHideWindowControl(panel);
             }
         }
 
@@ -419,7 +420,7 @@ namespace WeifenLuo.WinFormsUI.Docking
         {
             public SplitterBase CreateSplitterControl()
             {
-				return new VS2012LightDockWindow.VS2012LightDockWindowSplitterControl();
+				return new VS2012DarkDockWindow.VS2012DarkDockWindowSplitterControl();
             }
         }
 
@@ -435,10 +436,7 @@ namespace WeifenLuo.WinFormsUI.Docking
         {
             public AutoHideStripBase CreateAutoHideStrip(DockPanel panel)
             {
-				var strip = new VS2012LightAutoHideStrip(panel);
-				strip.BackColor = Color.FromArgb(255, 45, 45, 48);
-				//strip.BackgroundBrush = new SolidBrush(strip.BackColor);
-                return strip;
+                return new VS2012DarkAutoHideStrip(panel);
             }
         }
 
@@ -446,7 +444,7 @@ namespace WeifenLuo.WinFormsUI.Docking
         {
             public DockPaneCaptionBase CreateDockPaneCaption(DockPane pane)
             {
-                return new VS2012LightDockPaneCaption(pane);
+                return new VS2012DarkDockPaneCaption(pane);
             }
         }
 
@@ -454,7 +452,7 @@ namespace WeifenLuo.WinFormsUI.Docking
         {
             public DockWindow CreateDockWindow(DockPanel dockPanel, DockState dockState)
             {
-                return new VS2012LightDockWindow(dockPanel, dockState);
+                return new VS2012DarkDockWindow(dockPanel, dockState);
             }
         }
 
