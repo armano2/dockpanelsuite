@@ -8,14 +8,14 @@ namespace WeifenLuo.WinFormsUI.Docking
 {
     internal class ThemeSplitterControl : DockPane.SplitterControlBase
     {
-        private static readonly SolidBrush _horizontalBrush = new SolidBrush(ThemeMgr.Instance.getColor(KnownColors.SplitterControl_horizontalBrush));
-        private static readonly Color[] _verticalSurroundColors = new[] { ThemeMgr.Instance.getColor(KnownColors.SplitterControl_verticalSurroundColors) };
+        private static readonly SolidBrush _horizontalBrush = new SolidBrush(ThemeMgr.Instance.getColor(IKnownColors.SplitterControl_horizontalBrush));
+        private static readonly Color[] _verticalSurroundColors = new[] { ThemeMgr.Instance.getColor(IKnownColors.SplitterControl_verticalSurroundColors) };
 
 
         public ThemeSplitterControl(DockPane pane)
             : base(pane)
         {
-			this.BackColor = ThemeMgr.Instance.getColor(KnownColors.SplitterControl_horizontalColor);
+			this.BackColor = ThemeMgr.Instance.getColor(IKnownColors.SplitterControl_horizontalColor);
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -37,7 +37,7 @@ namespace WeifenLuo.WinFormsUI.Docking
                             path.AddRectangle(rect);
                             using (var brush = new PathGradientBrush(path)
                                 {
-                                    CenterColor = ThemeMgr.Instance.getColor(KnownColors.SplitterControl_horizontalColor),
+                                    CenterColor = ThemeMgr.Instance.getColor(IKnownColors.SplitterControl_horizontalColor),
                                     SurroundColors = _verticalSurroundColors
                                 })
                             {

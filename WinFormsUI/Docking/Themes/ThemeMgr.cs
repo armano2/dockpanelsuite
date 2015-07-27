@@ -13,7 +13,7 @@ namespace WeifenLuo.WinFormsUI.Docking.Themes
         public ProfessionalColorTable ColorTable { get; protected set; }
         public ThemePanel DockPanelTheme { get; protected set; }
 
-        public Color getColor(KnownColors colorType)
+        public Color getColor(IKnownColors colorType)
         {
             return this.colors.color(colorType);
         }

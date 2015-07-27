@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using WeifenLuo.WinFormsUI.Docking.Themes;
 using WeifenLuo.WinFormsUI.Docking.Colors;
+using WeifenLuo.WinFormsUI.Docking.Helpers;
 
 namespace WeifenLuo.WinFormsUI.Docking
 {
@@ -547,21 +548,21 @@ namespace WeifenLuo.WinFormsUI.Docking
 
         private static Pen PenToolWindowTabBorder
         {
-            get { return new Pen(ThemeMgr.Instance.getColor(KnownColors.ToolWindowTabBorder)); }
+            get { return new Pen(ThemeMgr.Instance.getColor(IKnownColors.ToolWindowTabBorder)); }
         }
 
 		private static Pen PenToolWindowActivedTabBorder {
-			get { return new Pen(ThemeMgr.Instance.getColor(KnownColors.ToolWindowActivedTabBorder)); }
+			get { return new Pen(ThemeMgr.Instance.getColor(IKnownColors.ToolWindowActivedTabBorder)); }
 		}
 
         private static Pen PenDocumentTabActiveBorder
         {
-            get { return new Pen(ThemeMgr.Instance.getColor(KnownColors.ToolWindowTabBorder)); }
+            get { return new Pen(ThemeMgr.Instance.getColor(IKnownColors.ToolWindowTabBorder)); }
         }
 
         private static Pen PenDocumentTabInactiveBorder
         {
-            get { return new Pen(ThemeMgr.Instance.getColor(KnownColors.ToolWindowActivedTabBorder)); }
+            get { return new Pen(ThemeMgr.Instance.getColor(IKnownColors.ToolWindowActivedTabBorder)); }
         }
 
         #endregion
@@ -1227,13 +1228,13 @@ namespace WeifenLuo.WinFormsUI.Docking
                 {
                     g.FillRectangle(new SolidBrush(activeColor), rect);
                     TextRenderer.DrawText(g, tab.Content.DockHandler.TabText, TextFont, rectText, activeText, DocumentTextFormat);
-                    g.DrawImage(rectCloseButton == ActiveClose ? Resources.ActiveTabHover_Close : Resources.ActiveTab_Close, rectCloseButton);
+                    DrawImageHelper.ConvertImage(Resources.DockPane_Close, g, this.BackColor, this.ForeColor, rectCloseButton == ActiveClose, rectCloseButton);
                 }
                 else
                 {
                     g.FillRectangle(new SolidBrush(lostFocusColor), rect);
                     TextRenderer.DrawText(g, tab.Content.DockHandler.TabText, TextFont, rectText, lostFocusText, DocumentTextFormat);
-                    g.DrawImage(rectCloseButton == ActiveClose ? Resources.LostFocusTabHover_Close : Resources.LostFocusTab_Close, rectCloseButton);
+                    DrawImageHelper.ConvertImage(Resources.DockPane_Close, g, this.ForeColor, this.BackColor, rectCloseButton == ActiveClose, rectCloseButton);
                 }
             }
             else
@@ -1242,12 +1243,13 @@ namespace WeifenLuo.WinFormsUI.Docking
                 {
                     g.FillRectangle(new SolidBrush(mouseHoverColor), rect);
                     TextRenderer.DrawText(g, tab.Content.DockHandler.TabText, TextFont, rectText, activeText, DocumentTextFormat);
-                    g.DrawImage(rectCloseButton == ActiveClose ? Resources.InactiveTabHover_Close : Resources.ActiveTabHover_Close, rectCloseButton);
+                    DrawImageHelper.ConvertImage(Resources.DockPane_Close, g, this.ForeColor, this.ForeColor, rectCloseButton == ActiveClose, rectCloseButton);
                 }
                 else
                 {
                     g.FillRectangle(new SolidBrush(inactiveColor), rect);
                     TextRenderer.DrawText(g, tab.Content.DockHandler.TabText, TextFont, rectText, inactiveText, DocumentTextFormat);
+                    DrawImageHelper.ConvertImage(Resources.DockPane_Close, g, this.ForeColor, this.ForeColor, rectCloseButton == ActiveClose, rectCloseButton);
                 }
             }
 

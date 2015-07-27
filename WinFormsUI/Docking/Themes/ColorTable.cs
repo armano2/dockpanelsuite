@@ -37,12 +37,12 @@ namespace WeifenLuo.WinFormsUI.Docking.Themes
         // btnBorder
         public override Color ButtonSelectedBorder
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.btnBorder); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.btnBorder); }
         }
         // btnBackgroundChecked
         public override Color ButtonCheckedGradientBegin
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.btnBackgroundChecked); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.btnBackgroundChecked); }
         }
         public override Color ButtonCheckedGradientMiddle
         {
@@ -55,7 +55,7 @@ namespace WeifenLuo.WinFormsUI.Docking.Themes
         // btnBackground
         public override Color ButtonSelectedGradientBegin
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.btnBackground); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.btnBackground); }
         }
         public override Color ButtonSelectedGradientMiddle
         {
@@ -68,7 +68,7 @@ namespace WeifenLuo.WinFormsUI.Docking.Themes
         // btnBackgroundPressed
         public override Color ButtonPressedGradientBegin
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.btnBackgroundPressed); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.btnBackgroundPressed); }
         }
         public override Color ButtonPressedGradientMiddle
         {
@@ -82,24 +82,24 @@ namespace WeifenLuo.WinFormsUI.Docking.Themes
 
         public override Color CheckBackground
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.btnBackground); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.btnBackground); }
         }
         public override Color CheckSelectedBackground
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.btnBackground); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.btnBackground); }
         }
         public override Color CheckPressedBackground
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.btnBackgroundSelected); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.btnBackgroundSelected); }
         }
         // Grip
         public override Color GripDark
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.gripDark); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.gripDark); }
         }
         public override Color GripLight
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.gripLight); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.gripLight); }
         }
         // Separator
         public override Color SeparatorDark
@@ -113,7 +113,7 @@ namespace WeifenLuo.WinFormsUI.Docking.Themes
         // Image
         public override Color ImageMarginGradientBegin
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.imageBorder); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.imageBorder); }
         }
         public override Color ImageMarginGradientMiddle
         {
@@ -138,7 +138,7 @@ namespace WeifenLuo.WinFormsUI.Docking.Themes
         // Menu
         public override Color MenuStripGradientBegin
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.menuBg); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.menuBg); }
         }
         public override Color MenuStripGradientEnd
         {
@@ -146,19 +146,19 @@ namespace WeifenLuo.WinFormsUI.Docking.Themes
         }
         public override Color MenuItemSelected
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.menuBgSelected); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.menuBgSelected); }
         }
         public override Color MenuItemBorder
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.menuBorder); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.menuBorder); }
         }
         public override Color MenuBorder
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.menuBg); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.menuBg); }
         }
         public override Color MenuItemSelectedGradientBegin
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.menuBgSelected); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.menuBgSelected); }
         }
         public override Color MenuItemSelectedGradientEnd
         {
@@ -166,7 +166,7 @@ namespace WeifenLuo.WinFormsUI.Docking.Themes
         }
         public override Color MenuItemPressedGradientBegin
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.menuBgPressed); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.menuBgPressed); }
         }
         public override Color MenuItemPressedGradientMiddle
         {
@@ -179,7 +179,7 @@ namespace WeifenLuo.WinFormsUI.Docking.Themes
         // Rafting
         public override Color RaftingContainerGradientBegin
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.raftingBg); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.raftingBg); }
         }
         public override Color RaftingContainerGradientEnd
         {
@@ -188,7 +188,7 @@ namespace WeifenLuo.WinFormsUI.Docking.Themes
         // Status
         public override Color StatusStripGradientBegin
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.statusBg); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.statusBg); }
         }
         public override Color StatusStripGradientEnd
         {
@@ -197,11 +197,11 @@ namespace WeifenLuo.WinFormsUI.Docking.Themes
         // ToolStrip
         public override Color ToolStripBorder
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.toolBorder); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.toolBorder); }
         }
         public override Color ToolStripDropDownBackground
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.toolDropDown); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.toolDropDown); }
         }
         public override Color ToolStripGradientBegin
         {
@@ -217,7 +217,7 @@ namespace WeifenLuo.WinFormsUI.Docking.Themes
         }
         public override Color ToolStripContentPanelGradientBegin
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.toolBackground); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.toolBackground); }
         }
         public override Color ToolStripContentPanelGradientEnd
         {
@@ -234,7 +234,7 @@ namespace WeifenLuo.WinFormsUI.Docking.Themes
         // Overflow
         public override Color OverflowButtonGradientBegin
         {
-            get { return ThemeMgr.Instance.getColor(KnownColors.overflowBg); }
+            get { return ThemeMgr.Instance.getColor(IKnownColors.overflowBg); }
         }
         public override Color OverflowButtonGradientMiddle
         {

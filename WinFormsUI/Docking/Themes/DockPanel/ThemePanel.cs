@@ -51,7 +51,7 @@ namespace WeifenLuo.WinFormsUI.Docking
                 {
                     m_dragForm = new DragForm();
                     SetDragForm(Rectangle.Empty);
-                    DragForm.BackColor = ThemeMgr.Instance.getColor(KnownColors.dragFrom);
+                    DragForm.BackColor = ThemeMgr.Instance.getColor(IKnownColors.dragFrom);
                     DragForm.Opacity = 0.5;
                     DragForm.Show(false);
                 }
@@ -454,13 +454,13 @@ namespace WeifenLuo.WinFormsUI.Docking
 
         public static DockPanelSkin CreatePanelThemeValues()
         {
-            var FormBackground = ThemeMgr.Instance.getColor(KnownColors.FormBackground);
-            var ActiveTabOrDocument = ThemeMgr.Instance.getColor(KnownColors.ActiveTabOrDocument);
-            var Active2TabOrDocument = ThemeMgr.Instance.getColor(KnownColors.Active2TabOrDocument);
-            var ActiveTabOrDocumentText = ThemeMgr.Instance.getColor(KnownColors.ActiveTabOrDocumentText);
-            var UnactiveTabOrDocumentText = ThemeMgr.Instance.getColor(KnownColors.UnactiveTabOrDocumentText);
-            var ActiveMultiTabBackground = ThemeMgr.Instance.getColor(KnownColors.ActiveMultiTabBackground);
-            var ActiveMultiTabText = ThemeMgr.Instance.getColor(KnownColors.ActiveMultiTabText);
+            var FormBackground = ThemeMgr.Instance.getColor(IKnownColors.FormBackground);
+            var ActiveTabOrDocument = ThemeMgr.Instance.getColor(IKnownColors.ActiveTabOrDocument);
+            var Active2TabOrDocument = ThemeMgr.Instance.getColor(IKnownColors.Active2TabOrDocument);
+            var ActiveTabOrDocumentText = ThemeMgr.Instance.getColor(IKnownColors.ActiveTabOrDocumentText);
+            var UnactiveTabOrDocumentText = ThemeMgr.Instance.getColor(IKnownColors.UnactiveTabOrDocumentText);
+            var ActiveMultiTabBackground = ThemeMgr.Instance.getColor(IKnownColors.ActiveMultiTabBackground);
+            var ActiveMultiTabText = ThemeMgr.Instance.getColor(IKnownColors.ActiveMultiTabText);
 
             // ------------------------------------------------------------
             var skin = new DockPanelSkin();

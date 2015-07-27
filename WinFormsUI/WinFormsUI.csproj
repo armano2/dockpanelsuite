@@ -68,15 +68,11 @@
     </Compile>
     <Compile Include="Docking\Docks\DockPanelSkin.cs">
     </Compile>
+    <Compile Include="Docking\Helpers\DrawImageHelper.cs" />
     <Compile Include="Docking\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Docking\ResourcesVS2012Dark.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ResourcesVS2012Dark.resx</DependentUpon>
     </Compile>
     <Compile Include="Docking\Themes\ColorTable.cs" />
     <Compile Include="Docking\Themes\DockPanel\ThemePanel.cs">
@@ -191,11 +187,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Docking\ResourcesVS2012Dark.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
-      <LastGenOutput>ResourcesVS2012Dark.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Docking\Strings.resx">
       <SubType>Designer</SubType>
       <Generator>ResXFileCodeGenerator</Generator>
@@ -226,25 +217,15 @@
     <EmbeddedResource Include="Docking\Docks\DockPanel.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Docking\Resources\ActiveTabHover_Close.png" />
-    <None Include="Docking\Resources\ActiveTab_Close.png" />
-    <None Include="Docking\ResourcesTheme\DockIndicator_PaneDiamond_Fill_VS2012.png" />
-    <None Include="Docking\ResourcesTheme\DockIndicator_PaneDiamond_HotspotIndex_VS2012.png" />
-    <None Include="Docking\ResourcesTheme\DockIndicator_PaneDiamond_Hotspot_VS2012.png" />
-    <None Include="Docking\ResourcesTheme\Dockindicator_PaneDiamond_VS2012.png" />
-    <None Include="Docking\ResourcesTheme\DockIndicator_PanelBottom_VS2012.png" />
-    <None Include="Docking\ResourcesTheme\DockIndicator_PanelFill_VS2012.png" />
-    <None Include="Docking\ResourcesTheme\DockIndicator_PanelLeft_VS2012.png" />
-    <None Include="Docking\ResourcesTheme\DockIndicator_PanelRight_VS2012.png" />
-    <None Include="Docking\ResourcesTheme\DockIndicator_PanelTop_VS2012.png" />
-    <None Include="Docking\Resources\InactiveTabHover_Close.png" />
-    <None Include="Docking\Resources\LostFocusTabHover_Close.png" />
-    <None Include="Docking\Resources\LostFocusTab_Close.png" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Content Include="Docking\ResourcesTheme\LostFocusTab_DarkHover_Close.png" />
-    <Content Include="Docking\ResourcesTheme\LostFocusTab_Dark_Close.png" />
+    <Content Include="Docking\Resources\DockIndicator_PaneDiamond_Fill_VS2012.png" />
+    <Content Include="Docking\Resources\DockIndicator_PaneDiamond_HotspotIndex_VS2012.png" />
+    <Content Include="Docking\Resources\DockIndicator_PaneDiamond_Hotspot_VS2012.png" />
+    <Content Include="Docking\Resources\DockIndicator_PaneDiamond_VS2012.png" />
+    <Content Include="Docking\Resources\DockIndicator_PanelBottom_VS2012.png" />
+    <Content Include="Docking\Resources\DockIndicator_PanelFill_VS2012.png" />
+    <Content Include="Docking\Resources\DockIndicator_PanelLeft_VS2012.png" />
+    <Content Include="Docking\Resources\DockIndicator_PanelRight_VS2012.png" />
+    <Content Include="Docking\Resources\DockIndicator_PanelTop_VS2012.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <UsingTask Condition=" '$(Configuration)' == 'Release' AND '$(OS)' == 'Windows_NT' AND Exists('..\gendarme\GendarmeMsBuild.dll')" AssemblyFile="..\gendarme\GendarmeMsBuild.dll" TaskName="GendarmeMsBuild.Gendarme" />

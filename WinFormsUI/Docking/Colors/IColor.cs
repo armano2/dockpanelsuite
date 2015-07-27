@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace WeifenLuo.WinFormsUI.Docking.Colors
 {
-    public enum KnownColors
+    public enum IKnownColors
     {
         btnBorder = 0,
         btnBackground,
@@ -43,9 +43,9 @@ namespace WeifenLuo.WinFormsUI.Docking.Colors
 
     public abstract class IColor
     {
-        protected Dictionary<KnownColors, Color> rgbTable;
+        protected Dictionary<IKnownColors, Color> rgbTable;
 
-        public Color color(KnownColors type)
+        public Color color(IKnownColors type)
         {
             if (rgbTable.ContainsKey(type))
                 return rgbTable[type];

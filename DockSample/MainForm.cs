@@ -9,6 +9,7 @@ using DockSample.Customization;
 using Lextm.SharpSnmpLib;
 using WeifenLuo.WinFormsUI.Docking;
 using WeifenLuo.WinFormsUI.Docking.Themes;
+using WeifenLuo.WinFormsUI.Docking.Colors;
 
 namespace DockSample
 {
@@ -145,11 +146,11 @@ namespace DockSample
         {
             if (sender == menuItemSchemaTheme)
             {
-                updateTheme(new WeifenLuo.WinFormsUI.Docking.Colors.Light());
+                updateTheme(new Light());
             }
             else if (sender == menuItemSchemaVS2012Dark)
             {
-                updateTheme(new WeifenLuo.WinFormsUI.Docking.Colors.Dark());
+                updateTheme(new Dark());
             }
         }
 
@@ -158,11 +159,14 @@ namespace DockSample
             //CloseAllContents(); // TODO: we have to remove this...
 
             ThemeMgr.Instance.SetColorTable(colorTable);
+            this.BackColor = ThemeMgr.Instance.getColor(IKnownColors.FormBackground);
             this.dockPanel.Theme = ThemeMgr.Instance.DockPanelTheme;
             this.dockPanel.Skin = ThemePanel.CreatePanelThemeValues();
 
             this.toolBar.Renderer = ThemeMgr.Instance.Renderer;
+            this.toolBar.BackColor = ThemeMgr.Instance.getColor(IKnownColors.FormBackground);
             this.mainMenu.Renderer = ThemeMgr.Instance.Renderer;
+            this.mainMenu.BackColor = ThemeMgr.Instance.getColor(IKnownColors.FormBackground);
 
             this.menuItemSchemaTheme.Checked = (colorTable is WeifenLuo.WinFormsUI.Docking.Colors.Light);
             this.menuItemSchemaVS2012Dark.Checked = (colorTable is WeifenLuo.WinFormsUI.Docking.Colors.Dark);
