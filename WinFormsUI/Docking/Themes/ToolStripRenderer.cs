@@ -2,6 +2,7 @@ using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using WeifenLuo.WinFormsUI.Docking.Themes;
 
 namespace WeifenLuo.WinFormsUI.Docking
 {
@@ -76,7 +77,7 @@ namespace WeifenLuo.WinFormsUI.Docking
 
                     if (button.Checked)
                     {
-                        pen = Color.FromArgb(0xFF, 0x00, 0x7A, 0xCC); // ColorTable.ButtonPressedBorder;
+                        pen = ColorTable.ButtonPressedBorder;
                         brushBegin = ColorTable.ButtonCheckedGradientBegin;
                         brushMiddle = ColorTable.ButtonCheckedGradientMiddle;
                         brushEnd = ColorTable.ButtonCheckedGradientEnd;

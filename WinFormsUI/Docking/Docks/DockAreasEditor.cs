@@ -4,6 +4,8 @@ using System.Drawing;
 using System.Drawing.Design;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
+using WeifenLuo.WinFormsUI.Docking.Themes;
+using WeifenLuo.WinFormsUI.Docking.Colors;
 
 namespace WeifenLuo.WinFormsUI.Docking
 {
@@ -94,8 +96,8 @@ namespace WeifenLuo.WinFormsUI.Docking
                                                          checkBoxDockLeft,
                                                          checkBoxFloat});
 
-                Size = new System.Drawing.Size(160, 144);
-                BackColor = SystemColors.Control;
+                this.Size = new System.Drawing.Size(160, 144);
+                this.BackColor = ThemeMgr.Instance.getColor(IKnownColors.FormBackground);
                 ResumeLayout();
             }
 

@@ -1,6 +1,8 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using WeifenLuo.WinFormsUI.Docking.Themes;
+using WeifenLuo.WinFormsUI.Docking.Colors;
 
 namespace WeifenLuo.WinFormsUI.Docking
 {
@@ -8,8 +10,8 @@ namespace WeifenLuo.WinFormsUI.Docking
     {
         private class ThemeAutoHideWindowSplitterControl : SplitterBase
         {
-            private static readonly SolidBrush _horizontalBrush = new SolidBrush(Color.FromArgb(0xFF, 204, 206, 219));
-            private static readonly Color[] _verticalSurroundColors = new[] { SystemColors.Control };
+            private static readonly SolidBrush _horizontalBrush = new SolidBrush(ThemeMgr.Instance.getColor(IKnownColors.SplitterControl_horizontalBrush));
+            private static readonly Color[] _verticalSurroundColors = new[] { ThemeMgr.Instance.getColor(IKnownColors.SplitterControl_verticalSurroundColors) };
 
             public ThemeAutoHideWindowSplitterControl(DockPanel.AutoHideWindowControl autoHideWindow)
             {
@@ -47,7 +49,7 @@ namespace WeifenLuo.WinFormsUI.Docking
                                 path.AddRectangle(rect);
                                 using (var brush = new PathGradientBrush(path)
                                     {
-                                        CenterColor = Color.FromArgb(0xFF, 204, 206, 219), SurroundColors = _verticalSurroundColors
+                                        CenterColor = ThemeMgr.Instance.getColor(IKnownColors.SplitterControl_horizontalBrush), SurroundColors = _verticalSurroundColors
                                     })
                                 {
                                     e.Graphics.FillRectangle(brush, rect.X + Measures.SplitterSize / 2 - 1, rect.Y,

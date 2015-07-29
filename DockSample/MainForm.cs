@@ -160,6 +160,7 @@ namespace DockSample
             this.BackColor = ThemeMgr.Instance.getColor(IKnownColors.FormBackground);
             this.dockPanel.Theme = ThemeMgr.Instance.DockPanelTheme;
             this.dockPanel.Skin = ThemePanel.CreatePanelThemeValues();
+            
 
             this.toolBar.Renderer = ThemeMgr.Instance.Renderer;
             this.toolBar.BackColor = ThemeMgr.Instance.getColor(IKnownColors.FormBackground);
@@ -170,6 +171,7 @@ namespace DockSample
 
             this.menuItemSchemaTheme.Checked = (colorTable is WeifenLuo.WinFormsUI.Docking.Colors.Light);
             this.menuItemSchemaVS2012Dark.Checked = (colorTable is WeifenLuo.WinFormsUI.Docking.Colors.Dark);
+            this.Refresh();
         }
 
         private void SetDocumentStyle(object sender, System.EventArgs e)
@@ -200,40 +202,6 @@ namespace DockSample
             menuItemLayoutByXml.Enabled = (newStyle != DocumentStyle.SystemMdi);
             toolBarButtonLayoutByCode.Enabled = (newStyle != DocumentStyle.SystemMdi);
             toolBarButtonLayoutByXml.Enabled = (newStyle != DocumentStyle.SystemMdi);
-        }
-
-        private void SetDockPanelSkinOptions(bool isChecked)
-        {
-            if (isChecked)
-            {
-                // All of these options may be set in the designer.
-                // This is not a complete list of possible options available in the skin.
-
-                AutoHideStripSkin autoHideSkin = new AutoHideStripSkin();
-                autoHideSkin.DockStripGradient.StartColor = Color.AliceBlue;
-                autoHideSkin.DockStripGradient.EndColor = Color.Blue;
-                autoHideSkin.DockStripGradient.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-                autoHideSkin.TabGradient.StartColor = SystemColors.Control;
-                autoHideSkin.TabGradient.EndColor = SystemColors.ControlDark;
-                autoHideSkin.TabGradient.TextColor = SystemColors.ControlText;
-                autoHideSkin.TextFont = new Font("Showcard Gothic", 10);
-
-                DockPaneStripSkin dockPaneSkin = new DockPaneStripSkin();
-                dockPaneSkin.DocumentGradient.DockStripGradient.StartColor = Color.Red;
-                dockPaneSkin.DocumentGradient.DockStripGradient.EndColor = Color.Pink;
-
-                dockPaneSkin.DocumentGradient.ActiveTabGradient.StartColor = Color.Green;
-                dockPaneSkin.DocumentGradient.ActiveTabGradient.EndColor = Color.Green;
-                dockPaneSkin.DocumentGradient.ActiveTabGradient.TextColor = Color.White;
-
-                dockPaneSkin.DocumentGradient.InactiveTabGradient.StartColor = Color.Gray;
-                dockPaneSkin.DocumentGradient.InactiveTabGradient.EndColor = Color.Gray;
-                dockPaneSkin.DocumentGradient.InactiveTabGradient.TextColor = Color.Black;
-
-                dockPaneSkin.TextFont = new Font("SketchFlow Print", 10);
-            }
-
-            menuItemLayoutByXml_Click(menuItemLayoutByXml, EventArgs.Empty);
         }
 
         #endregion
@@ -406,8 +374,6 @@ namespace DockSample
                 menuItemLayoutByCode_Click(null, null);
             else if (e.ClickedItem == toolBarButtonLayoutByXml)
                 menuItemLayoutByXml_Click(null, null);
-            else if (e.ClickedItem == toolBarButtonDockPanelSkinDemo)
-                SetDockPanelSkinOptions(!toolBarButtonDockPanelSkinDemo.Checked);
         }
 
         private void menuItemNewWindow_Click(object sender, System.EventArgs e)

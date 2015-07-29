@@ -38,7 +38,7 @@ namespace DockSample
             // propertyGrid
             // 
             this.propertyGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propertyGrid.LineColor = System.Drawing.SystemColors.ScrollBar;
+            //this.propertyGrid.LineColor = System.Drawing.SystemColors.ScrollBar; // TODO: Color
             this.propertyGrid.Location = new System.Drawing.Point(0, 24);
             this.propertyGrid.Name = "propertyGrid";
             this.propertyGrid.Size = new System.Drawing.Size(208, 262);

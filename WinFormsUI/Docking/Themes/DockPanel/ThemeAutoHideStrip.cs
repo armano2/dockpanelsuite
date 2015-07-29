@@ -2,6 +2,8 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using WeifenLuo.WinFormsUI.Docking.Themes;
+using WeifenLuo.WinFormsUI.Docking.Colors;
 
 namespace WeifenLuo.WinFormsUI.Docking
 {
@@ -203,7 +205,8 @@ namespace WeifenLuo.WinFormsUI.Docking
                 ControlStyles.UserPaint |
                 ControlStyles.AllPaintingInWmPaint |
                 ControlStyles.OptimizedDoubleBuffer, true);
-            BackColor = SystemColors.ControlLight;
+
+            this.BackColor = ThemeMgr.Instance.getColor(IKnownColors.FormBackground);
         }
 
         protected override void OnPaint(PaintEventArgs e)

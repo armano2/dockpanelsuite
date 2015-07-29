@@ -2,6 +2,8 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.ComponentModel;
+using WeifenLuo.WinFormsUI.Docking.Themes;
+using WeifenLuo.WinFormsUI.Docking.Colors;
 
 namespace WeifenLuo.WinFormsUI.Docking
 {
@@ -251,7 +253,8 @@ namespace WeifenLuo.WinFormsUI.Docking
             {
                 m_dragForm = new DragForm();
                 SetDragForm(Rectangle.Empty);
-                DragForm.BackColor = SystemColors.ActiveCaption;
+
+                DragForm.BackColor = ThemeMgr.Instance.getColor(IKnownColors.btnBorder);
                 DragForm.Opacity = 0.5;
                 DragForm.Show(false);
             }

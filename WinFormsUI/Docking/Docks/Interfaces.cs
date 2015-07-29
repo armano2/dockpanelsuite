@@ -11,6 +11,11 @@ namespace WeifenLuo.WinFormsUI.Docking
         void OnDeactivate(EventArgs e);
     }
 
+    public interface IReloadable
+    {
+        void ReloadTheme();
+    }
+
     public interface INestedPanesContainer
     {
         DockState DockState	{	get;	}

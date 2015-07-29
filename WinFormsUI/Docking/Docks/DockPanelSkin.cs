@@ -190,7 +190,7 @@ namespace WeifenLuo.WinFormsUI.Docking
     [TypeConverter(typeof(DockPaneTabGradientConverter))]
     public class TabGradient : DockPanelGradient
     {
-        private Color m_textColor = SystemColors.ControlText;
+        private Color m_textColor = Color.Red;
 
         /// <summary>
         /// The text color.
@@ -209,8 +209,8 @@ namespace WeifenLuo.WinFormsUI.Docking
     [TypeConverter(typeof(DockPanelGradientConverter))]
     public class DockPanelGradient
     {
-        private Color m_startColor = SystemColors.Control;
-        private Color m_endColor = SystemColors.Control;
+        private Color m_startColor = Color.Red;
+        private Color m_endColor = Color.Red;
         private LinearGradientMode m_linearGradientMode = LinearGradientMode.Horizontal;
 
         /// <summary>

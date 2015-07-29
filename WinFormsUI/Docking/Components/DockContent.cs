@@ -4,10 +4,12 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Diagnostics.CodeAnalysis;
+using WeifenLuo.WinFormsUI.Docking.Themes;
+using WeifenLuo.WinFormsUI.Docking.Colors;
 
 namespace WeifenLuo.WinFormsUI.Docking
 {
-    public class DockContent : Form, IDockContent
+    public class DockContent : Form, IDockContent, IReloadable
     {
         public DockContent()
         {
@@ -15,6 +17,21 @@ namespace WeifenLuo.WinFormsUI.Docking
             m_dockHandler.DockStateChanged += new EventHandler(DockHandler_DockStateChanged);
             //Suggested as a fix by bensty regarding form resize
             this.ParentChanged += new EventHandler(DockContent_ParentChanged);
+            this.ReloadTheme();
+
+            ThemeMgr.Instance.RegisterControl(this);
+        }
+
+        ~DockContent()
+        {
+            ThemeMgr.Instance.UnregisterControl(this);
+        }
+
+        public void ReloadTheme()
+        {
+            this.BackColor = ThemeMgr.Instance.getColor(IKnownColors.FormBackground);
+            this.ForeColor = ThemeMgr.Instance.getColor(IKnownColors.FormText);
+            this.Refresh();
         }
 
         //Suggested as a fix by bensty regarding form resize
