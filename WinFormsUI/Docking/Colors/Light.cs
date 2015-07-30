@@ -36,7 +36,11 @@ namespace WeifenLuo.WinFormsUI.Docking.Colors
 
             rgbTable[IKnownColors.dragFrom] = Color.FromArgb(255, 239, 239, 242);
 
-            rgbTable[IKnownColors.FormBackground] = SystemColors.Control;
+            if (System.Environment.OSVersion.Version.Major == 10)
+                rgbTable[IKnownColors.FormBackground] = Color.White;
+            else
+                rgbTable[IKnownColors.FormBackground] = SystemColors.Control;
+
             rgbTable[IKnownColors.FormText] = Color.Black;
             
             rgbTable[IKnownColors.ActiveTabOrDocument] = Color.FromArgb(0xFF, 0x00, 0x7A, 0xCC);
