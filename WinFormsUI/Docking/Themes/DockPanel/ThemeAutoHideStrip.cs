@@ -212,7 +212,7 @@ namespace WeifenLuo.WinFormsUI.Docking
         protected override void OnPaint(PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            g.FillRectangle(SystemBrushes.Control, ClientRectangle);
+            g.FillRectangle(new SolidBrush(ThemeMgr.Instance.getColor(IKnownColors.FormBackground)), ClientRectangle);
             DrawTabStrip(g);
         }
 
@@ -325,10 +325,10 @@ namespace WeifenLuo.WinFormsUI.Docking
             IDockContent content = tab.Content;
 
             Color textColor;
-            if (tab.Content.DockHandler.IsActivated || tab.IsMouseOver)
-                textColor = DockPanel.Skin.AutoHideStripSkin.DockStripGradient.StartColor;
+            if (DockPanel.ActiveContent == content || tab.IsMouseOver)
+                textColor = DockPanel.Skin.DockPaneStripSkin.ToolWindowGradient.ActiveTabGradient.TextColor;
             else
-                textColor = DockPanel.Skin.AutoHideStripSkin.DockStripGradient.EndColor;
+                textColor = DockPanel.Skin.DockPaneStripSkin.ToolWindowGradient.InactiveTabGradient.TextColor;
 
             Rectangle rectThickLine = rectTabOrigin;
             rectThickLine.X += _TabGapLeft + _TextGapLeft + _ImageGapLeft + _ImageWidth;
@@ -387,10 +387,7 @@ namespace WeifenLuo.WinFormsUI.Docking
             rectText.Width -= ImageGapLeft + imageWidth + ImageGapRight + TextGapLeft;
             rectText = RtlTransform(GetTransformedRectangle(dockState, rectText), dockState);
 
-            if (DockPanel.ActiveContent == content || tab.IsMouseOver)
-                textColor = DockPanel.Skin.DockPaneStripSkin.ToolWindowGradient.ActiveTabGradient.TextColor;
-            else
-                textColor = DockPanel.Skin.DockPaneStripSkin.ToolWindowGradient.InactiveTabGradient.TextColor;
+
 
             if (dockState == DockState.DockLeftAutoHide || dockState == DockState.DockRightAutoHide)
                 g.DrawString(content.DockHandler.TabText, TextFont, new SolidBrush(textColor), rectText, StringFormatTabVertical);

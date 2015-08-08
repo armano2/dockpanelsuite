@@ -27,6 +27,7 @@ namespace WeifenLuo.WinFormsUI.Docking.Colors
         toolDropDown,
         toolBackground,
         dragFrom,
+        contentBackcolor,
 
         ActiveTabOrDocument,
         Active2TabOrDocument,
@@ -41,6 +42,14 @@ namespace WeifenLuo.WinFormsUI.Docking.Colors
         SplitterControl_horizontalBrush,
         SplitterControl_horizontalColor,
         SplitterControl_verticalSurroundColors,
+
+        ScrollBarBackground,
+        ScrollBarDragBackground,
+        ScrollBarDragHoverBackground,
+        ScrollBarDragDownBackground,
+        ScrollBarArrowBackground,
+        ScrollBarArrowHoverBackground,
+        ScrollBarArrowDownBackground,
     };
 
     public abstract class IColor

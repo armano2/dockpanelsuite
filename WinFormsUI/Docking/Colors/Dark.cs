@@ -50,6 +50,8 @@ namespace WeifenLuo.WinFormsUI.Docking.Colors
 
             rgbTable[IKnownColors.dragFrom] = Color.FromArgb(0xff, 91, 173, 255);
 
+
+            rgbTable[IKnownColors.contentBackcolor] = Color.FromArgb(255, 30, 30, 30);
             rgbTable[IKnownColors.FormBackground] = Color.FromArgb(255, 45, 45, 48);
             rgbTable[IKnownColors.FormText] = Color.White;
 
@@ -66,6 +68,17 @@ namespace WeifenLuo.WinFormsUI.Docking.Colors
             rgbTable[IKnownColors.SplitterControl_horizontalBrush] = Color.FromArgb(0xFF, 37, 37, 38);
             rgbTable[IKnownColors.SplitterControl_horizontalColor] = Color.FromArgb(255, 37, 37, 38);
             rgbTable[IKnownColors.SplitterControl_verticalSurroundColors] = Color.FromArgb(255, 45, 45, 48);
+
+
+            rgbTable[IKnownColors.ScrollBarBackground] = Color.FromArgb(255, 62, 62, 68);
+            rgbTable[IKnownColors.ScrollBarDragBackground] = Color.FromArgb(255, 104, 104, 104);
+            rgbTable[IKnownColors.ScrollBarDragHoverBackground] = Color.FromArgb(255, 158, 158, 158);
+            rgbTable[IKnownColors.ScrollBarDragDownBackground] = Color.FromArgb(255, 239, 235, 239);
+            rgbTable[IKnownColors.ScrollBarArrowBackground] = Color.FromArgb(255, 153, 153, 153);
+            rgbTable[IKnownColors.ScrollBarArrowHoverBackground] = Color.FromArgb(255, 28, 151, 234);
+            rgbTable[IKnownColors.ScrollBarArrowDownBackground] = Color.FromArgb(255, 0, 122, 204);
+
+
         }
     }
 }
