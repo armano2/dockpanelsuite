@@ -60,6 +60,8 @@ namespace WeifenLuo.WinFormsUI.Docking.Colors
             rgbTable[IKnownColors.SplitterControl_horizontalColor] = Color.FromArgb(0xFF, 204, 206, 219);
             rgbTable[IKnownColors.SplitterControl_verticalSurroundColors] = SystemColors.Control;
 
+            rgbTable[IKnownColors.ListSelectionBackColor] = Color.FromArgb(0xFF, 51, 153, 255);
+            rgbTable[IKnownColors.ListSelectionForeColor] = Color.White;
 
             rgbTable[IKnownColors.ScrollBarBackground] = Color.FromArgb(255, 245, 245, 245);
             rgbTable[IKnownColors.ScrollBarDragBackground] = Color.FromArgb(255, 222, 223, 231);

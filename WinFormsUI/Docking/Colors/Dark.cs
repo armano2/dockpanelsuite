@@ -31,10 +31,10 @@ namespace WeifenLuo.WinFormsUI.Docking.Colors
             //rgbTable[IKnownColors.gripDark] = Color.FromArgb(255, 221, 226, 236);
             //rgbTable[IKnownColors.gripLight] = Color.FromArgb(255, 204, 204, 219);
 
-            //rgbTable[IKnownColors.imageBorder] = Color.FromArgb(255, 231, 232, 236);
+            rgbTable[IKnownColors.imageBorder] = Color.FromArgb(255, 27, 27, 28);
 
             rgbTable[IKnownColors.menuBg] = Color.FromArgb(255, 45, 45, 48);
-            rgbTable[IKnownColors.menuBorder] = Color.FromArgb(255, 45, 45, 48);
+            rgbTable[IKnownColors.menuBorder] = Color.FromArgb(255, 27, 27, 28);
             rgbTable[IKnownColors.menuBgSelected] = Color.FromArgb(255, 45, 45, 48);
             rgbTable[IKnownColors.menuBgPressed] = Color.FromArgb(255, 45, 45, 48);
 
@@ -45,7 +45,7 @@ namespace WeifenLuo.WinFormsUI.Docking.Colors
             //rgbTable[IKnownColors.overflowBg] = Color.FromArgb(255, 239, 239, 242);
 
             //rgbTable[IKnownColors.toolBorder] = Color.FromArgb(0, 0, 0, 0);
-            //rgbTable[IKnownColors.toolDropDown] = Color.FromArgb(255, 231, 232, 236);
+            rgbTable[IKnownColors.toolDropDown] = Color.FromArgb(255, 27, 27, 28);
             //rgbTable[IKnownColors.toolBackground] = Color.FromArgb(255, 239, 239, 242);
 
             rgbTable[IKnownColors.dragFrom] = Color.FromArgb(0xff, 91, 173, 255);
@@ -68,7 +68,9 @@ namespace WeifenLuo.WinFormsUI.Docking.Colors
             rgbTable[IKnownColors.SplitterControl_horizontalBrush] = Color.FromArgb(0xFF, 37, 37, 38);
             rgbTable[IKnownColors.SplitterControl_horizontalColor] = Color.FromArgb(255, 37, 37, 38);
             rgbTable[IKnownColors.SplitterControl_verticalSurroundColors] = Color.FromArgb(255, 45, 45, 48);
-
+            
+            rgbTable[IKnownColors.ListSelectionBackColor] = Color.FromArgb(0xFF, 51, 153, 255);
+            rgbTable[IKnownColors.ListSelectionForeColor] = Color.White;
 
             rgbTable[IKnownColors.ScrollBarBackground] = Color.FromArgb(255, 62, 62, 68);
             rgbTable[IKnownColors.ScrollBarDragBackground] = Color.FromArgb(255, 104, 104, 104);

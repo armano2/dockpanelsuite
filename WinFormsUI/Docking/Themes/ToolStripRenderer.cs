@@ -55,9 +55,14 @@ namespace WeifenLuo.WinFormsUI.Docking
                         brushEnd = Color.Empty;
                     }
 
-                    DrawRectangle(e.Graphics, itemRect, brushBegin, brushEnd, pen, true);
+                    DrawRectangle(e.Graphics, itemRect, brushBegin, brushEnd, pen, false);
                 }
             }
+        }
+        protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
+        {
+            e.TextColor = ThemeMgr.Instance.getColor(WeifenLuo.WinFormsUI.Docking.Colors.IKnownColors.FormText);
+            base.OnRenderItemText(e);
         }
 
         protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)

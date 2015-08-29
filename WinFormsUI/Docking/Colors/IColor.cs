@@ -39,6 +39,9 @@ namespace WeifenLuo.WinFormsUI.Docking.Colors
         ToolWindowTabBorder,
         ToolWindowActivedTabBorder,
 
+        ListSelectionBackColor,
+        ListSelectionForeColor,
+
         SplitterControl_horizontalBrush,
         SplitterControl_horizontalColor,
         SplitterControl_verticalSurroundColors,
