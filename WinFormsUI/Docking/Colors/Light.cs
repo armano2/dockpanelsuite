@@ -62,7 +62,8 @@ namespace WeifenLuo.WinFormsUI.Docking.Colors
 
             rgbTable[IKnownColors.ListSelectionBackColor] = Color.FromArgb(0xFF, 51, 153, 255);
             rgbTable[IKnownColors.ListSelectionForeColor] = Color.White;
-
+            rgbTable[IKnownColors.ListSelectionHoverColor] = Color.FromArgb(0xFF, 201, 222, 245);
+            
             rgbTable[IKnownColors.ScrollBarBackground] = Color.FromArgb(255, 245, 245, 245);
             rgbTable[IKnownColors.ScrollBarDragBackground] = Color.FromArgb(255, 222, 223, 231);
             rgbTable[IKnownColors.ScrollBarDragHoverBackground] = Color.FromArgb(255, 136, 136, 136);

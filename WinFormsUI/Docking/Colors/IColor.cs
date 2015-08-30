@@ -41,6 +41,7 @@ namespace WeifenLuo.WinFormsUI.Docking.Colors
 
         ListSelectionBackColor,
         ListSelectionForeColor,
+        ListSelectionHoverColor,
 
         SplitterControl_horizontalBrush,
         SplitterControl_horizontalColor,

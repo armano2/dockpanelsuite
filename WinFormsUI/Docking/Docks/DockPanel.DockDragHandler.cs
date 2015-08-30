@@ -111,7 +111,7 @@ namespace WeifenLuo.WinFormsUI.Docking
                 set
                 {
                     m_status = value;
-                    if (m_status == DockStyle.None)
+                    /*if (m_status == DockStyle.None)
                         Image = _bitmapPaneDiamond;
                     else if (m_status == DockStyle.Left)
                         Image = _bitmapPaneDiamondLeft;
@@ -122,7 +122,7 @@ namespace WeifenLuo.WinFormsUI.Docking
                     else if (m_status == DockStyle.Bottom)
                         Image = _bitmapPaneDiamondBottom;
                     else if (m_status == DockStyle.Fill)
-                        Image = _bitmapPaneDiamondFill;
+                        Image = _bitmapPaneDiamondFill;*/
                 }
             }
         }
